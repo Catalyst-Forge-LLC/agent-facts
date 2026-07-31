@@ -16,6 +16,10 @@ in the xFacts family:
 | [ModelFacts](https://modelfacts.dev) | **Brain** | What went into this model? |
 | **AgentFacts** | **Hands** | What can this agent do, reach, and do without asking? |
 | ToolFacts (toolfacts.dev) | **Toolbelt** | What does each instrument touch when invoked? |
+| SkillFacts (skillfacts.dev) | **Playbook** | What will this teach my agent to do? (domain reserved, build later) |
+
+Suite-level strategy lives in the standing vision doc:
+`catalyst-forge/docs/xfacts-suite-vision.md`.
 
 **Boundary with ToolFacts** (`tool-facts/GENESIS.md`): AgentFacts labels
 the *actor* — configuration, permissions, leash. ToolFacts labels the *instrument* —
