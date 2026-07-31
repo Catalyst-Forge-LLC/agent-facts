@@ -15,6 +15,15 @@ in the xFacts family:
 | [AppFacts](https://appfacts.dev) | **Body** | What is this app built from? |
 | [ModelFacts](https://modelfacts.dev) | **Brain** | What went into this model? |
 | **AgentFacts** | **Hands** | What can this agent do, reach, and do without asking? |
+| ToolFacts (toolfacts.dev) | **Toolbelt** | What does each instrument touch when invoked? |
+
+**Boundary with ToolFacts** (`tool-facts/GENESIS.md`): AgentFacts labels
+the *actor* — configuration, permissions, leash. ToolFacts labels the *instrument* —
+per-tool side effects and reach. `AGENT_FACTS.md` references `TOOL_FACTS.md` files
+the same way it references `MODEL_FACTS.md`; its `tools`/`reach` groups are the
+rollup, ToolFacts is the itemized detail. Build the ToolFacts generator first: the
+MCP introspection code is the shared core, and AgentFacts rolls up what ToolFacts
+itemizes.
 
 An agent is where an app and a model meet the world. Nobody installing an MCP server
 or wiring up an autonomous agent worries about parameter counts. They worry: can it
