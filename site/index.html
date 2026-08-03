@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgentFacts - Know what it can reach before you let it run</title>
+  <meta name="description" content="AGENT_FACTS.md: a tiny, curated, machine-parseable label for what an AI agent can do, reach, and do without asking. Spec and schema from Catalyst Forge." />
+  <link rel="canonical" href="https://agentfacts.dev/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="AgentFacts" />
+  <meta property="og:description" content="A Nutrition Facts label for AI agents. Know what it can reach before you let it run." />
+  <meta property="og:url" content="https://agentfacts.dev/" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #101418;
+      --paper: #f8fafc;
+      --slate: #1a222c;
+      --slate-2: #243040;
+      --mute: #9aa8b8;
+      --line: #d7dee7;
+      --accent: #f6ad55;
+      --accent-soft: #fbd38d;
+      --ok: #2f6f4e;
+      --radius: 2px;
+      --font-display: "Sora", sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+      --max: 68rem;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--paper);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(246, 173, 85, 0.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(80, 120, 160, 0.14), transparent 50%),
+        linear-gradient(180deg, #0c1015 0%, var(--ink) 40%, #0a0e13 100%);
+      font-family: var(--font-mono);
+      font-size: 15px;
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent-soft); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    a:hover { color: #fff; }
+
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.25rem 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 55% at 50% 0%, black, transparent);
+      pointer-events: none;
+    }
+
+    .hero-copy {
+      position: relative;
+      padding-bottom: 1.75rem;
+      animation: fadeup 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(3rem, 8vw, 5rem);
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      margin: 0 0 1rem;
+      color: #fff;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .lede {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+      line-height: 1.35;
+      color: #e8eef5;
+      max-width: 32ch;
+      margin: 0 0 0.85rem;
+    }
+
+    .sub {
+      color: var(--mute);
+      max-width: 48ch;
+      margin: 0 0 1.75rem;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1rem;
+      border: 1px solid transparent;
+      font: 600 0.85rem/1 var(--font-mono);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); color: #fff; }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1a1208;
+    }
+    .btn-primary:hover { background: #f8c06e; color: #1a1208; }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(255,255,255,0.22);
+      color: var(--paper);
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+
+    .label-plane {
+      position: relative;
+      width: 100%;
+      margin-top: auto;
+      background: var(--paper);
+      color: var(--ink);
+      border-top: 4px solid var(--ink);
+      box-shadow: 0 -30px 80px rgba(0, 0, 0, 0.35);
+      animation: rise 750ms 80ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    .label-plane-inner {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+      padding: 1.1rem 0 1.35rem;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .label-plane h2 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: -0.03em;
+      margin: 0;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .label-plane .serving {
+      font-size: 0.75rem;
+      border-bottom: 10px solid var(--ink);
+      padding: 0.4rem 0 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .label-cols {
+      display: grid;
+      gap: 0.25rem 2rem;
+    }
+
+    @media (min-width: 720px) {
+      .label-cols { grid-template-columns: 1fr 1fr; }
+    }
+
+    .label-plane .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--ink);
+      padding: 0.32rem 0;
+      font-size: 0.8rem;
+    }
+
+    .label-plane .row.thick { border-bottom-width: 5px; }
+    .label-plane .row strong { font-weight: 600; }
+
+    .label-plane .deps {
+      margin-top: 0.65rem;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: #44505c;
+      grid-column: 1 / -1;
+    }
+
+    .label-plane .deps b {
+      display: block;
+      color: var(--ink);
+      font-size: 0.8rem;
+      margin-bottom: 0.15rem;
+    }
+
+    @keyframes fadeup {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    section {
+      padding: 3.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: -0.03em;
+      margin: 0 0 0.6rem;
+      color: #fff;
+    }
+
+    .section-lead {
+      color: var(--mute);
+      max-width: 52ch;
+      margin: 0 0 1.5rem;
+    }
+
+    .prose p { margin: 0 0 1rem; color: #c9d3de; max-width: 62ch; }
+    .prose strong { color: #fff; font-weight: 600; }
+
+    .who {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0 0;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .who li {
+      padding-left: 1.1rem;
+      position: relative;
+      color: #d5dde6;
+    }
+
+    .who li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.45rem;
+      height: 0.45rem;
+      background: var(--accent);
+    }
+
+    pre {
+      margin: 0;
+      padding: 1rem 1.1rem;
+      overflow-x: auto;
+      background: var(--slate);
+      border: 1px solid var(--slate-2);
+      color: #dce5ef;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .split {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 800px) {
+      .split { grid-template-columns: 1fr 1fr; align-items: start; }
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .links a {
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(251, 211, 141, 0.45);
+      padding-bottom: 0.1rem;
+    }
+
+    .links a:hover { border-bottom-color: #fff; }
+
+    .sponsor {
+      background: linear-gradient(180deg, rgba(246, 173, 85, 0.08), transparent);
+    }
+
+    .sponsor-box {
+      border-left: 3px solid var(--accent);
+      padding: 0.25rem 0 0.25rem 1.1rem;
+      max-width: 48rem;
+    }
+
+    .sponsor-box p { margin: 0.35rem 0; color: #c9d3de; }
+    .sponsor-box .kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin: 0 0 0.4rem;
+    }
+
+    footer {
+      padding: 2rem 0 2.75rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--mute);
+      font-size: 0.8rem;
+    }
+
+    footer .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-copy">
+      <h1 class="brand">Agent<span>Facts</span></h1>
+      <p class="lede">A Nutrition Facts label for AI agents.</p>
+      <p class="sub">
+        Know what it can reach before you let it run. A tiny <code>AGENT_FACTS.md</code> that labels a
+        <strong>configuration</strong>, not a codebase: tools, reach, leash, and egress.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/Catalyst-Forge-LLC/agent-facts">View on GitHub</a>
+        <a class="btn btn-ghost" href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/SPEC.md">Read the spec</a>
+        <a class="btn btn-ghost" href="#write">Validate one</a>
+      </div>
+    </div>
+
+    <div class="label-plane" aria-label="Example Agent Facts label">
+      <div class="label-plane-inner">
+        <h2>Agent Facts</h2>
+        <div class="serving">Serving size: one configuration · Read time: under a minute</div>
+        <div class="label-cols">
+          <div class="row thick"><strong>Kind</strong><span>cli-agent</span></div>
+          <div class="row thick"><strong>Model binding</strong><span>host-provided</span></div>
+          <div class="row"><strong>Tools</strong><span>29 · no shell · no browse</span></div>
+          <div class="row"><strong>Filesystem</strong><span>none</span></div>
+          <div class="row"><strong>Network</strong><span>none</span></div>
+          <div class="row"><strong>Autonomy</strong><span>reactive</span></div>
+          <div class="row thick"><strong>Self-looping</strong><span>false</span></div>
+          <div class="row thick"><strong>Telemetry</strong><span>none</span></div>
+          <div class="deps">
+            <b>Composition</b>
+            Toolset detail in <code>TOOL_FACTS.md</code> · model may link <code>MODEL_FACTS.md</code> ·
+            same agent binary, different config = different label
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="why">
+      <div class="wrap prose">
+        <h2 class="section-title">Why it exists</h2>
+        <p class="section-lead">Nobody turning an agent loose worries about parameter counts.</p>
+        <p>
+          They worry: can it read my filesystem, can it run shell commands, where does my data go,
+          what does it do without a human in the loop, and what does it phone home?
+          <a href="https://appfacts.dev">AppFacts</a> labels the <strong>body</strong>.
+          <a href="https://modelfacts.dev">ModelFacts</a> labels the <strong>brain</strong>.
+          AgentFacts labels the <strong>hands</strong>.
+        </p>
+        <p>
+          <strong>Configuration, not codebase.</strong> The same binary with a different tool
+          config is a different agent. Label the shipped defaults; a wider host policy is a new
+          file.
+        </p>
+        <p>
+          <strong>The golden rule:</strong> if it's subjective (<em>"this agent is very careful"</em>)
+          it doesn't belong here. If it's objective (<em>"requires approval before filesystem writes"</em>)
+          it does. When a fact isn't public, the file says <code>undisclosed</code>.
+        </p>
+        <ul class="who">
+          <li>Operators deciding whether to unclip an agent on a real workspace</li>
+          <li>Teams comparing leash length, reach, and egress across configs</li>
+          <li>Harnesses that need a structured rollup before attaching toolsets</li>
+          <li>Anyone who wants ToolFacts detail behind an agent-level summary</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="format">
+      <div class="wrap">
+        <h2 class="section-title">The format</h2>
+        <p class="section-lead">Frontmatter you can validate. A label you can skim.</p>
+        <div class="split">
+          <pre aria-label="Example AGENT_FACTS frontmatter">---
+agent_facts_version: "0.1.0"
+name: ForgeKit Reference Agent
+developer: Catalyst Forge
+kind: cli-agent
+status: active
+license: Apache-2.0
+model:
+  binding: host-provided
+tools:
+  count: 29
+  executes_shell: false
+  browses_web: false
+  toolsets:
+    - ../tool-facts/examples/TOOL_FACTS.md
+reach:
+  filesystem: none
+  network: none
+autonomy:
+  level: reactive
+  self_looping: false
+memory:
+  persistence: none
+  location: undisclosed
+egress:
+  telemetry: none
+  data_shared: none
+generated:
+  date: 2026-08-03
+  generator: hand-authored
+---</pre>
+          <div class="prose">
+            <p>
+              Spec document <strong>0.1.0</strong> - fields may still shift before 1.0. Files declare
+              <code>agent_facts_version</code> (<code>0.1.0</code> today) so tooling can evolve with them.
+            </p>
+            <p>
+              Actor vs instrument: an MCP server gets
+              <a href="https://toolfacts.dev">ToolFacts</a>. The agent configuration that
+              <em>uses</em> that server gets AgentFacts, with <code>tools.toolsets</code> pointing at
+              the itemized label.
+            </p>
+            <ul class="links">
+              <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/SPEC.md">SPEC.md</a></li>
+              <li><a href="/schema/agent-facts.schema.json">JSON Schema</a></li>
+              <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/examples/AGENT_FACTS.md">Full example</a></li>
+              <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/examples/AGENT_FACTS.template.md">Template</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="write">
+      <div class="wrap">
+        <h2 class="section-title">Validate one</h2>
+        <p class="section-lead">
+          Hand-author from the template today. The generator (MCP introspection + config scan)
+          ships next; ToolFacts' introspection core comes first.
+        </p>
+        <div class="split">
+          <pre># validate any AGENT_FACTS.md (CI-friendly exit codes)
+cd agent-facts/validator &amp;&amp; pnpm install
+pnpm validate ../examples/AGENT_FACTS.md
+pnpm validate path/to/AGENT_FACTS.md</pre>
+          <div class="prose">
+            <p>
+              Output is checked against
+              <a href="/schema/agent-facts.schema.json">agent-facts.schema.json</a> (draft-07).
+              Frontmatter is the sole source of truth; the Markdown body is the human label.
+            </p>
+            <p>
+              On the roadmap: generator from agent configs and MCP tool lists, directory of
+              labeled public agents, portable QR labels and badges.
+            </p>
+            <ul class="links">
+              <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts">github.com/Catalyst-Forge-LLC/agent-facts</a></li>
+              <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/tree/main/validator">Validator docs</a></li>
+              <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/tree/main/generator">Generator stub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor" id="catalyst-forge">
+      <div class="wrap">
+        <div class="sponsor-box">
+          <p class="kicker">Origin · Sponsor</p>
+          <h2 class="section-title">From Catalyst Forge</h2>
+          <p>
+            AgentFacts was created by
+            <a href="https://www.catalystforge.com/">Catalyst Forge</a> -
+            AI consulting for growing businesses. Find what matters. Forge it.
+          </p>
+          <p>
+            Sibling to <a href="https://appfacts.dev">AppFacts</a>,
+            <a href="https://modelfacts.dev">ModelFacts</a>, and
+            <a href="https://toolfacts.dev">ToolFacts</a> - body, brain, hands, and toolbelt,
+            all labeled. Spec &amp; schema are <strong>CC0</strong> (public domain). Tooling is
+            <strong>MIT</strong>. Adopt freely; a link back is appreciated but not required.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap row">
+      <div>© 2026 AgentFacts · Maintained by <a href="https://www.catalystforge.com/">Catalyst Forge</a></div>
+      <div style="display:inline-flex;flex-wrap:wrap;gap:0.85rem;align-items:center;">
+        <a href="https://appfacts.dev">AppFacts</a>
+        ·
+        <a href="https://modelfacts.dev">ModelFacts</a>
+        ·
+        <a href="https://toolfacts.dev">ToolFacts</a>
+        ·
+        <a href="https://github.com/Catalyst-Forge-LLC/agent-facts">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
