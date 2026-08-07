@@ -78,9 +78,10 @@ Generator stubbed. Planned after ToolFacts MCP introspection core. See
 
 - [x] Spec v0.1.0, schema, template, validator
 - [x] Multi-kind exemplar ladder + `/examples/index.json` + `llms.txt`
+- [x] Portable `/v#ag1.…` viewer with flip-to-raw + copy; exemplars deep-link in
 - [ ] Generator
 - [ ] Public agent directory
-- [ ] Portable visual label / badges
+- [ ] QR / badge emission from generator
 
 ## Website
 

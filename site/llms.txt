@@ -5,6 +5,7 @@
 ## Primary
 
 - Exemplar catalog (JSON): https://agentfacts.dev/examples/index.json
+- Portable viewer: https://agentfacts.dev/v#ag1.… (human skim; flip for raw; see each exemplar `viewer` field)
 - Label schema: https://agentfacts.dev/schema/agent-facts.schema.json
 - Site: https://agentfacts.dev/
 - Related instruments: https://toolfacts.dev/llms.txt
