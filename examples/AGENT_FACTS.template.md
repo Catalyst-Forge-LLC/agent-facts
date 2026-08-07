@@ -19,7 +19,7 @@ tools:
   browses_web: false
   # categories: [guidance, shell]
   # toolsets:
-  #   - ../tool-facts/examples/TOOL_FACTS.md
+  #   - ../tool-facts/examples/forgekit-mcp/TOOL_FACTS.md
 reach:
   filesystem: none         # none | read | read-write | scoped
   network: none            # none | allowlist | unrestricted

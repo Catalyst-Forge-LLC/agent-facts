@@ -14,139 +14,91 @@
   <a href="https://agentfacts.dev">agentfacts.dev</a> ·
   <a href="./SPEC.md">Spec</a> ·
   <a href="https://agentfacts.dev/schema/agent-facts.schema.json">Schema</a> ·
-  <a href="./examples/AGENT_FACTS.md">Example</a>
+  <a href="./examples/">Examples</a> ·
+  <a href="https://agentfacts.dev/llms.txt">llms.txt</a>
 </p>
 
 ---
 
 ## What is this?
 
-[AppFacts](https://appfacts.dev) labels the **body** of software. [ModelFacts](https://modelfacts.dev) labels the **brain**. **AgentFacts** labels the **hands**: what an agent can do, reach, and do without asking. [ToolFacts](https://toolfacts.dev) labels each **instrument** (per-tool side effects); AgentFacts rolls those up at the actor level.
+[AppFacts](https://appfacts.dev) labels the **body**. [ModelFacts](https://modelfacts.dev)
+labels the **brain**. **AgentFacts** labels the **hands**: what an agent can do, reach,
+and do without asking. [ToolFacts](https://toolfacts.dev) labels each **instrument**;
+AgentFacts rolls those up at the actor level. [SkillFacts](https://skillfacts.dev) labels
+the **playbook** an agent may be taught to follow.
 
-**A label describes a configuration, not a codebase.** The same agent binary with different tools or permission defaults is a different agent. Label shipped defaults; a wider host policy is a new file.
+**A label describes a configuration, not a codebase.** The same agent binary with different
+tools or permission defaults is a different agent.
 
-**The Golden Rule:** if a piece of information is *subjective* ("this agent is very careful"), it does not belong in AgentFacts. If it is *objective* ("requires human approval before filesystem writes"), it does. When a fact isn't public, the file says `undisclosed`. An agent that will not say what it can touch is a louder red flag than a model that will not state its token count.
+**The Golden Rule:** subjective vibes stay out; objective reach/autonomy/egress stay in.
+`undisclosed` beats guessing. An agent that will not say what it can touch is a loud red flag.
 
-Useful for:
+## Exemplars
 
-- **Operators** deciding whether to unclip an agent on a real workspace
-- **Teams** comparing leash length, reach, and egress across configs
-- **Harnesses** that need a structured rollup before attaching toolsets
-- **Anyone** who wants ToolFacts detail behind an agent-level summary
+One configuration per `kind`:
 
-## What it looks like
+| Slug | Kind | Autonomy | FS | Network |
+|---|---|---|---|---|
+| [forgekit-reference](./examples/forgekit-reference/AGENT_FACTS.md) | cli-agent | reactive | none | none |
+| [ide-coding-agent](./examples/ide-coding-agent/AGENT_FACTS.md) | ide-extension | supervised | read-write | none |
+| [autonomous-researcher](./examples/autonomous-researcher/AGENT_FACTS.md) | autonomous-service | autonomous | scoped | unrestricted |
+| [support-chatbot](./examples/support-chatbot/AGENT_FACTS.md) | chatbot | reactive | none | allowlist |
+| [ci-workflow](./examples/ci-workflow/AGENT_FACTS.md) | workflow | supervised | none | allowlist |
 
-Every `AGENT_FACTS.md` has two halves. The **YAML frontmatter is the source of truth** - structured and validatable. The **Markdown body is a rendered label** for humans.
+Catalog: [`examples/index.json`](./examples/index.json). Template:
+[`examples/AGENT_FACTS.template.md`](./examples/AGENT_FACTS.template.md).
 
-```markdown
----
-agent_facts_version: "0.1.0"
-name: ForgeKit Reference Agent
-developer: Catalyst Forge
-kind: cli-agent
-status: active
-license: Apache-2.0
-model:
-  binding: host-provided
-tools:
-  count: 29
-  executes_shell: false
-  browses_web: false
-  toolsets:
-    - ../tool-facts/examples/TOOL_FACTS.md
-reach:
-  filesystem: none
-  network: none
-autonomy:
-  level: reactive
-  self_looping: false
-memory:
-  persistence: none
-  location: undisclosed
-egress:
-  telemetry: none
-  data_shared: none
-generated:
-  date: 2026-08-03
-  generator: hand-authored
----
+## Fact groups
 
-# Agent Facts - ForgeKit Reference Agent
-
-| | |
+| Group | Answers |
 |---|---|
-| Filesystem | none |
-| Network | none |
-| ... | ... |
-```
-
-See the [full worked example](./examples/AGENT_FACTS.md) (ForgeKit Reference Agent: a coding CLI config that *uses* the ForgeKit MCP server; the server itself is ToolFacts), the [template](./examples/AGENT_FACTS.template.md), and the [specification](./SPEC.md).
-
-| Group | The label's… | Answers |
-|---|---|---|
-| `model` | Engine | Fixed, configurable, host-provided, or bring-your-own? |
-| `tools` | Attachments | What can it invoke? Shell? Browser? Which toolsets? |
-| `reach` | Blast radius | Filesystem scope, network, credentials. |
-| `autonomy` | Leash | What runs unprompted vs with approval? Self-looping? |
-| `memory` | Retention | What persists, and where? |
-| `egress` | Outbound | Telemetry, logging, what leaves the machine. |
+| `model` | Fixed, configurable, host-provided, or bring-your-own? |
+| `tools` | What can it invoke? Shell? Browser? Which ToolFacts? |
+| `reach` | Filesystem scope, network, credentials. |
+| `autonomy` | What runs unprompted vs with approval? Self-looping? |
+| `memory` | What persists, and where? |
+| `egress` | Telemetry and what leaves the machine. |
 
 ## Validating a file
-
-The frontmatter conforms to [`site/schema/agent-facts.schema.json`](./site/schema/agent-facts.schema.json) (served at [agentfacts.dev/schema/agent-facts.schema.json](https://agentfacts.dev/schema/agent-facts.schema.json)) - any draft-07 validator works. This repo ships a small TypeScript CLI:
 
 ```bash
 cd validator
 pnpm install
-
-# exit code 1 on any failure - CI-friendly
-pnpm validate ../examples/AGENT_FACTS.md
-pnpm validate ../examples/AGENT_FACTS.template.md
+pnpm validate ../examples/forgekit-reference/AGENT_FACTS.md
+pnpm validate ../examples/*/AGENT_FACTS.md
 ```
 
 ## Generating a label
 
-The [generator](./generator/) is stubbed for this milestone. Planned sources: MCP `tools/list` (after ToolFacts ships the shared introspection core), local agent / MCP client configs, and package metadata. Optional LLM curation for judgment fields only, sanitized against the schema enums.
+Generator stubbed. Planned after ToolFacts MCP introspection core. See
+[`generator/README.md`](./generator/README.md).
 
 ## Roadmap
 
-- [x] Spec v0.1.0, canonical JSON Schema, worked example + template
-- [x] Schema validator CLI (TypeScript)
-- [ ] Generator: MCP introspection + config scan, optional LLM curation
-- [ ] Site directory of labeled public agents
-- [ ] Portable visual label and badges, mirroring AppFacts
-- [ ] Family footer cross-links across AppFacts / ModelFacts / AgentFacts / ToolFacts
+- [x] Spec v0.1.0, schema, template, validator
+- [x] Multi-kind exemplar ladder + `/examples/index.json` + `llms.txt`
+- [ ] Generator
+- [ ] Public agent directory
+- [ ] Portable visual label / badges
 
 ## Website
 
-The static site for [agentfacts.dev](https://agentfacts.dev) lives in [`site/`](./site/). On Cloudflare Pages, set the project root to `site` - no build step. Local preview: `npx serve site -p 3003`.
-
 | Path | Purpose |
 |---|---|
-| [`site/index.html`](./site/index.html) | Marketing / docs landing |
-| [`site/schema/agent-facts.schema.json`](./site/schema/agent-facts.schema.json) | Canonical JSON Schema |
+| [`site/index.html`](./site/index.html) | Landing |
+| [`site/schema/`](./site/schema/) | JSON Schema |
+| [`site/examples/`](./site/examples/) | Fetchable exemplars |
+| [`site/llms.txt`](./site/llms.txt) | Agent entrypoint |
 
-## Relationship to the family
-
-Same philosophy, same file shape (frontmatter + rendered body), same origin. AppFacts = body, ModelFacts = brain, AgentFacts = hands, ToolFacts = toolbelt. An app that ships an agent can carry the labels side by side. `model.models` may point at `MODEL_FACTS.md`; `tools.toolsets` may point at `TOOL_FACTS.md`.
-
-## Contributing
-
-This is **v0.1.0** - the spec's required fields may still shift before v1.0. Issues and proposals on field taxonomy, `kind` enums, and reach conventions are welcome.
+Session plan: [`specs/REVIEW-AND-PLAN.md`](./specs/REVIEW-AND-PLAN.md).
 
 ## License
 
-- **Spec & schema:** [CC0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain) - adopt them freely, no attribution needed.
-- **Tooling (validator):** MIT.
+- **Spec & schema:** CC0
+- **Tooling (validator):** MIT
 
 ---
-
-<p align="center">
-  Part of <a href="https://agentfacts.dev">agentfacts.dev</a> · Sibling of
-  <a href="https://appfacts.dev">appfacts.dev</a> ·
-  <a href="https://modelfacts.dev">modelfacts.dev</a> ·
-  <a href="https://toolfacts.dev">toolfacts.dev</a>
-</p>
 
 <p align="center">
   <em>"Know what it can reach before you let it run."</em>

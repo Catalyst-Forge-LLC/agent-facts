@@ -1,0 +1,23 @@
+# AgentFacts
+
+> Nutrition-label facts for AI agent *configurations* (not codebases). Prefer structured YAML/JSON over marketing HTML.
+
+## Primary
+
+- Exemplar catalog (JSON): https://agentfacts.dev/examples/index.json
+- Label schema: https://agentfacts.dev/schema/agent-facts.schema.json
+- Site: https://agentfacts.dev/
+- Related instruments: https://toolfacts.dev/llms.txt
+
+## How to use an agent label
+
+1. Fetch `/examples/index.json` or open `AGENT_FACTS.md` for the shipped config.
+2. Read `kind`, `reach`, `autonomy`, `memory`, `egress`, and `tools` rollup.
+3. Follow `tools.toolsets` to ToolFacts for per-tool side effects; `model.models` may point at ModelFacts.
+4. Validate frontmatter against the schema.
+
+A different toolset or permission default is a different agent. Undisclosed reach is a red flag.
+
+## Spec (git)
+
+- https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/SPEC.md

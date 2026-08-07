@@ -1,0 +1,64 @@
+{
+  "label": "agent-facts",
+  "version": "0.1.0",
+  "updated": "2026-08-07",
+  "schema": "https://agentfacts.dev/schema/agent-facts.schema.json",
+  "note": "Curated configuration exemplars. Illustrative agents are not product certificates.",
+  "exemplars": [
+    {
+      "slug": "forgekit-reference",
+      "name": "ForgeKit Reference Agent",
+      "kind": "cli-agent",
+      "autonomy": "reactive",
+      "filesystem": "none",
+      "network": "none",
+      "self_looping": false,
+      "path": "forgekit-reference/AGENT_FACTS.md",
+      "dogfood": true
+    },
+    {
+      "slug": "ide-coding-agent",
+      "name": "IDE Coding Agent (supervised defaults)",
+      "kind": "ide-extension",
+      "autonomy": "supervised",
+      "filesystem": "read-write",
+      "network": "none",
+      "self_looping": false,
+      "path": "ide-coding-agent/AGENT_FACTS.md",
+      "dogfood": false
+    },
+    {
+      "slug": "autonomous-researcher",
+      "name": "Autonomous Web Researcher",
+      "kind": "autonomous-service",
+      "autonomy": "autonomous",
+      "filesystem": "scoped",
+      "network": "unrestricted",
+      "self_looping": true,
+      "path": "autonomous-researcher/AGENT_FACTS.md",
+      "dogfood": false
+    },
+    {
+      "slug": "support-chatbot",
+      "name": "Customer Support Chatbot",
+      "kind": "chatbot",
+      "autonomy": "reactive",
+      "filesystem": "none",
+      "network": "allowlist",
+      "self_looping": false,
+      "path": "support-chatbot/AGENT_FACTS.md",
+      "dogfood": false
+    },
+    {
+      "slug": "ci-workflow",
+      "name": "CI Triage Workflow Agent",
+      "kind": "workflow",
+      "autonomy": "supervised",
+      "filesystem": "none",
+      "network": "allowlist",
+      "self_looping": false,
+      "path": "ci-workflow/AGENT_FACTS.md",
+      "dogfood": false
+    }
+  ]
+}

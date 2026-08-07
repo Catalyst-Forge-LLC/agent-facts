@@ -17,7 +17,7 @@ tools:
   browses_web: false
   categories: [guidance, templates, audit]
   toolsets:
-    - ../tool-facts/examples/forgekit-mcp/TOOL_FACTS.md
+    - ../../tool-facts/examples/forgekit-mcp/TOOL_FACTS.md
 reach:
   filesystem: none
   network: none
@@ -53,7 +53,7 @@ credits:
 
 *Shipped configuration: a coding CLI agent with the ForgeKit MCP server attached.
 The MCP server is labeled separately in ToolFacts
-([`forgekit-mcp/TOOL_FACTS.md`](../../tool-facts/examples/forgekit-mcp/TOOL_FACTS.md)).*
+([`forgekit-mcp/TOOL_FACTS.md`](../../../tool-facts/examples/forgekit-mcp/TOOL_FACTS.md)).*
 
 ## Model
 

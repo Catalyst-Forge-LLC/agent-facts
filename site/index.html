@@ -500,11 +500,31 @@ generated:
             <ul class="links">
               <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/SPEC.md">SPEC.md</a></li>
               <li><a href="/schema/agent-facts.schema.json">JSON Schema</a></li>
-              <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/examples/AGENT_FACTS.md">Full example</a></li>
+              <li><a href="/examples/index.json">Exemplar catalog (JSON)</a></li>
+              <li><a href="/examples/forgekit-reference/AGENT_FACTS.md">ForgeKit reference example</a></li>
               <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/examples/AGENT_FACTS.template.md">Template</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="examples">
+      <div class="wrap prose">
+        <h2 class="section-title">Exemplar ladder</h2>
+        <p class="section-lead">One configuration per <code>kind</code>, so leash and blast radius can be compared.</p>
+        <p>
+          Machine index: <a href="/examples/index.json"><code>/examples/index.json</code></a>.
+          Several exemplars compose ToolFacts via <code>tools.toolsets</code>.
+        </p>
+        <ul class="who">
+          <li><a href="/examples/forgekit-reference/AGENT_FACTS.md">forgekit-reference</a> - <code>cli-agent</code>, reactive, no FS/network</li>
+          <li><a href="/examples/ide-coding-agent/AGENT_FACTS.md">ide-coding-agent</a> - <code>ide-extension</code>, supervised writes/shell</li>
+          <li><a href="/examples/autonomous-researcher/AGENT_FACTS.md">autonomous-researcher</a> - <code>autonomous-service</code>, self-loop + open web</li>
+          <li><a href="/examples/support-chatbot/AGENT_FACTS.md">support-chatbot</a> - <code>chatbot</code>, cloud memory, identified egress</li>
+          <li><a href="/examples/ci-workflow/AGENT_FACTS.md">ci-workflow</a> - <code>workflow</code>, GitHub allowlist</li>
+        </ul>
       </div>
     </section>
 
@@ -518,8 +538,8 @@ generated:
         <div class="split">
           <pre># validate any AGENT_FACTS.md (CI-friendly exit codes)
 cd agent-facts/validator &amp;&amp; pnpm install
-pnpm validate ../examples/AGENT_FACTS.md
-pnpm validate path/to/AGENT_FACTS.md</pre>
+pnpm validate ../examples/forgekit-reference/AGENT_FACTS.md
+pnpm validate ../examples/*/AGENT_FACTS.md</pre>
           <div class="prose">
             <p>
               Output is checked against
