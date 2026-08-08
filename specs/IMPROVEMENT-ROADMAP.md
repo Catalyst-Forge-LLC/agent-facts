@@ -36,7 +36,8 @@ ToolFacts MCP core). No public agent directory yet.
 3. When ToolFacts generator lands, implement AgentFacts generator: config scan +
    tool rollup from ToolFacts; LLM only for judgment enums.
 4. Retarget `tools.toolsets` / `model.models` to **https** URLs once siblings are
-   deployed (not only sibling relative paths).
+   deployed (not only sibling relative paths) — per suite
+   [discovery contract](../../x-facts/specs/DISCOVERY-AND-PUBLICATION.md).
 
 ### Mid-term
 

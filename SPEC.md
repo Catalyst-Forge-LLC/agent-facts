@@ -1,4 +1,4 @@
-# AgentFacts Specification - v0.1.0
+# AgentFacts Specification - v0.1.1
 
 > *"Know what it can reach before you let it run."*
 
@@ -91,7 +91,7 @@ itemized detail.
 | `executes_shell` | boolean | ✅ | Whether any attached capability can run shell commands |
 | `browses_web` | boolean | ✅ | Whether any attached capability can browse the open web |
 | `categories` | string list | | Short tags, e.g. `[guidance, templates, audit]` |
-| `toolsets` | string list | | URLs or paths to `TOOL_FACTS.md` files (the itemized detail) |
+| `toolsets` | string list | | URLs (preferred) or local paths to `TOOL_FACTS.md` files (the itemized detail) |
 
 ### `reach` (the "blast radius")
 
@@ -156,15 +156,27 @@ Telemetry, logging, what leaves the machine.
 - Keep the body short enough to skim in under a minute: can it touch my files, can it
   hit the network, what runs without approval, and what leaves my machine.
 - **Composition:** `model.models` may point at `MODEL_FACTS.md`; `tools.toolsets` may
-  point at `TOOL_FACTS.md`. An app that ships an agent can carry `APP_FACTS.md`,
-  `MODEL_FACTS.md`, and `AGENT_FACTS.md` side by side.
+  point at `TOOL_FACTS.md`. Across package boundaries those refs **SHOULD** be
+  `https://` URLs to the canonical files. An app that ships an agent can carry
+  `APP_FACTS.md`, `MODEL_FACTS.md`, and `AGENT_FACTS.md` side by side.
 - **Canonical schema URL** (matches the schema `$id`):
   [`https://agentfacts.dev/schema/agent-facts.schema.json`](https://agentfacts.dev/schema/agent-facts.schema.json)
   Source in this repo: [`site/schema/agent-facts.schema.json`](./site/schema/agent-facts.schema.json).
 
+## Publication & discovery
+
+Suite contract: [x-facts `DISCOVERY-AND-PUBLICATION.md`](../x-facts/specs/DISCOVERY-AND-PUBLICATION.md).
+
+| | |
+|---|---|
+| **Canonical file** | Next to shipped default config (or agent project root) `AGENT_FACTS.md` |
+| **Primary pointer** | Product docs and host “about this agent” / attach UI |
+| **Composition** | Graph of pointers: `toolsets` and model refs **SHOULD** be canonical URLs |
+| **Fallback** | `/.well-known/x-facts/agent.md` on the product homepage |
+
 ## Versioning
 
-- **This document:** v0.1.0.
+- **This document:** v0.1.1 (publication & discovery; see revision history).
 - **Files** declare `agent_facts_version` (currently `"0.1.0"`) so tooling can evolve
   independently of the prose document.
 - Required-field list may still change before v1.0.
@@ -173,6 +185,7 @@ Telemetry, logging, what leaves the machine.
 
 | Spec doc | Notes |
 |---|---|
+| **0.1.1** | Publication & discovery: host pointers; URL-preferred `toolsets` / model refs; link to suite discovery contract. |
 | **0.1.0** | Initial specification, formalizing [`GENESIS.md`](./GENESIS.md): frontmatter + rendered body, six fact groups (model, tools, reach, autonomy, memory, egress) plus identity fields, closed enums, `undisclosed` convention, actor/instrument boundary with ToolFacts. |
 
 ## License
