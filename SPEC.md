@@ -58,7 +58,7 @@ resync.
 | Field | Type | Description |
 |---|---|---|
 | `agent_facts_version` | string | Spec version this *file* conforms to, e.g. `"0.1.0"` |
-| `name` | string | Configuration name, e.g. `ForgeKit Reference Agent` |
+| `name` | string | Configuration name, e.g. `ForgeTrail Reference Agent` |
 | `developer` | string | Organization (or person) that ships this configuration |
 | `kind` | enum | One of: `cli-agent`, `ide-extension`, `autonomous-service`, `chatbot`, `workflow` |
 | `status` | enum | One of: `active`, `deprecated`, `preview`, `archived` |

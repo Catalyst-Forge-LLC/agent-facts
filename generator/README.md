@@ -26,10 +26,10 @@ Mirror [ModelFacts generator](https://github.com/Catalyst-Forge-LLC/model-facts/
 ## Sequencing
 
 Build the ToolFacts generator before this one. Then point AgentFacts at a reference
-agent config (ForgeKit MCP attached) and require deterministic fields (tool count,
+agent config (ForgeTrail MCP attached) and require deterministic fields (tool count,
 names) to match with no LLM involved.
 
 ## Dogfood target
 
-`examples/AGENT_FACTS.md` - ForgeKit Reference Agent (`kind: cli-agent`), not the
+`examples/AGENT_FACTS.md` - ForgeTrail Reference Agent (`kind: cli-agent`), not the
 MCP server itself.

@@ -1,6 +1,6 @@
 ---
 agent_facts_version: "0.1.0"
-name: ForgeKit Reference Agent
+name: ForgeTrail Reference Agent
 developer: Catalyst Forge
 kind: cli-agent
 status: active
@@ -17,7 +17,7 @@ tools:
   browses_web: false
   categories: [guidance, templates, audit]
   toolsets:
-    - ../tool-facts/examples/forgekit-mcp/TOOL_FACTS.md
+    - ../tool-facts/examples/forgetrail-mcp/TOOL_FACTS.md
 reach:
   filesystem: none
   network: none
@@ -41,7 +41,7 @@ credits:
   built_by: "Catalyst Forge - https://www.catalystforge.com/"
 ---
 
-# Agent Facts - ForgeKit Reference Agent
+# Agent Facts - ForgeTrail Reference Agent
 
 | | |
 |---|---|
@@ -51,9 +51,9 @@ credits:
 | **License** | Apache-2.0 |
 | **Version** | 0.1.0 |
 
-*Shipped configuration: a coding CLI agent with the ForgeKit MCP server attached.
+*Shipped configuration: a coding CLI agent with the ForgeTrail MCP server attached.
 The MCP server is labeled separately in ToolFacts
-([`forgekit-mcp/TOOL_FACTS.md`](../../tool-facts/examples/forgekit-mcp/TOOL_FACTS.md)).*
+([`forgetrail-mcp/TOOL_FACTS.md`](../../tool-facts/examples/forgetrail-mcp/TOOL_FACTS.md)).*
 
 ## Model
 
@@ -70,7 +70,7 @@ The MCP server is labeled separately in ToolFacts
 | Executes shell | false |
 | Browses web | false |
 | Categories | guidance, templates, audit |
-| Toolsets | `forgekit-mcp` |
+| Toolsets | `forgetrail-mcp` |
 
 ## Reach
 

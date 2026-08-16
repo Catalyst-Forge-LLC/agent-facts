@@ -44,7 +44,7 @@ ToolFacts MCP core). No public agent directory yet.
 5. Directory seed (shared crawl with ToolFacts): popular agent configs by kind.
 6. Operator-facing presets: “tight leash”, “supervised IDE”, “autonomous research”
    as URL filters (ModelFacts selection lesson — objective fields first).
-7. ForgeKit Reference Agent as permanent dogfood; regenerate when tools change.
+7. ForgeTrail Reference Agent as permanent dogfood; regenerate when tools change.
 8. Bootstrap snippet for AGENTS.md: “read AGENT_FACTS before widening permissions.”
 
 ### Later

@@ -6,14 +6,14 @@
   "note": "Curated configuration exemplars. Illustrative agents are not product certificates.",
   "exemplars": [
     {
-      "slug": "forgekit-reference",
-      "name": "ForgeKit Reference Agent",
+      "slug": "forgetrail-reference",
+      "name": "ForgeTrail Reference Agent",
       "kind": "cli-agent",
       "autonomy": "reactive",
       "filesystem": "none",
       "network": "none",
       "self_looping": false,
-      "path": "forgekit-reference/AGENT_FACTS.md",
+      "path": "forgetrail-reference/AGENT_FACTS.md",
       "dogfood": true,
       "viewer": "/v#ag1.eNpFUstqIzEQ_BXT53kkua1uxpDLGgLZ3JYwyFLPjLCk1qp7PDHG_75IdpybaEpV1dV1gROo5waiDggKXilP-NvJ5h1HzBgNbrYTRoEGLJ7QU8IMCnZatD-zbCoeGji6aEGB8a7VdzyLloVBgTbiTgXkncHIRWabtJmxfemeoIFAFj2oCxxctC5OoGAmljZlOjmL9hvCoP5-XhsQovK-gKElCqiXXw3gF5pFkAee0XtQo_aMDRwyrYw8rHh4zIwWnCg7LHwwLc7qaIo9wZC8FmRoQC_WCXzexVAqtuv6ruvLpB21Ee7xS4fkkfuxxHB00gaT-o-3t_3wut19_OmCheI4ozZzcTw6j3xmwQAKIsUiG1FWysefgUUWF7U4inXlBkxGi1Gc9jxk_Le4jPYehl6EIoVzYfflQqCq3D1ynUqK2j--DSPlGymjHwdPlGrkNZxrAwED5cqWMLNjKR348ebJVGOgYInWsfHEaOHaAE4ZuZ5F0GNAKSyPlbTogWddfd-G1wZORaFyPXXPtQozBUx6KoKzSGLV9-u6duZetxpzZyj0UEJNxE6q2wd6cjIvhwr57mhbO9ru97vbmdqjK_WUvMRSBQtK8oLX_3D3DMc"
     },

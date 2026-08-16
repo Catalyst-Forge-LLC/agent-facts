@@ -4,7 +4,7 @@ One configuration per `kind` in the v0.1 enum.
 
 | Slug | Kind | Autonomy | FS | Network |
 |---|---|---|---|---|
-| [forgekit-reference](./forgekit-reference/AGENT_FACTS.md) | cli-agent | reactive | none | none |
+| [forgetrail-reference](./forgetrail-reference/AGENT_FACTS.md) | cli-agent | reactive | none | none |
 | [ide-coding-agent](./ide-coding-agent/AGENT_FACTS.md) | ide-extension | supervised | read-write | none |
 | [autonomous-researcher](./autonomous-researcher/AGENT_FACTS.md) | autonomous-service | autonomous | scoped | unrestricted |
 | [support-chatbot](./support-chatbot/AGENT_FACTS.md) | chatbot | reactive | none | allowlist |
@@ -12,5 +12,5 @@ One configuration per `kind` in the v0.1 enum.
 
 Machine index: [`index.json`](./index.json). Template: [`AGENT_FACTS.template.md`](./AGENT_FACTS.template.md).
 
-The flat [`AGENT_FACTS.md`](./AGENT_FACTS.md) remains the ForgeKit dogfood copy for
+The flat [`AGENT_FACTS.md`](./AGENT_FACTS.md) remains the ForgeTrail dogfood copy for
 older links; prefer slug paths for new references.

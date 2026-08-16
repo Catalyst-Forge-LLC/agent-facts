@@ -14,7 +14,7 @@
 - SPEC v0.1.0: configuration-not-codebase; six groups (model, tools, reach,
   autonomy, memory, egress); ToolFacts composition.
 - Schema + validator + family-quality amber site.
-- One worked example: ForgeKit Reference Agent (`cli-agent`, tight leash).
+- One worked example: ForgeTrail Reference Agent (`cli-agent`, tight leash).
 
 ### Gaps
 
@@ -39,7 +39,7 @@
 
 | Slug | `kind` | Signal |
 |---|---|---|
-| `forgekit-reference` | `cli-agent` | Reactive, no FS/network; ForgeKit toolset (existing). |
+| `forgetrail-reference` | `cli-agent` | Reactive, no FS/network; ForgeTrail toolset (existing). |
 | `ide-coding-agent` | `ide-extension` | Supervised; scoped FS write; shell gated; approvals. |
 | `autonomous-researcher` | `autonomous-service` | Self-looping; unrestricted/allowlist net; browse. |
 | `support-chatbot` | `chatbot` | Cloud memory; identified telemetry; fixed model. |

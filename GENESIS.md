@@ -85,7 +85,7 @@ Frontmatter sketch (starting point, not gospel — the build session owns the en
 ```yaml
 ---
 agent_facts_version: "0.1.0"
-name: ForgeKit Reference Agent   # a coding agent configured with the ForgeKit MCP server
+name: ForgeTrail Reference Agent   # a coding agent configured with the ForgeTrail MCP server
 developer: Catalyst Forge
 kind: cli-agent         # cli-agent | ide-extension | autonomous-service | chatbot | workflow
                         # (an MCP server is an instrument, not an actor: it gets TOOL_FACTS.md)
@@ -149,7 +149,7 @@ Same as the ModelFacts verdict: a standard asking for adoption loses; a useful s
 that emits the standard wins.
 
 1. **Dogfood first:** the first real `AGENT_FACTS.md` labels a reference agent
-   configuration built around ForgeKit's MCP server, whose `TOOL_FACTS.md` (see
+   configuration built around ForgeTrail's MCP server, whose `TOOL_FACTS.md` (see
    the tool-facts sibling) supplies the itemized toolset detail. The MCP server
    itself is an instrument and gets ToolFacts, not AgentFacts. In-house agents
    follow.
@@ -183,7 +183,7 @@ agent-facts/
   SPEC.md               formal spec v0.1.0
   README.md             family-style: centered header, tagline, what-is-this
   NOTES.md              maintainer/agent state snapshot, kept current
-  examples/             AGENT_FACTS.md (worked: ForgeKit reference agent), AGENT_FACTS.template.md
+  examples/             AGENT_FACTS.md (worked: ForgeTrail reference agent), AGENT_FACTS.template.md
   validator/            TS ESM CLI, tsx + ajv + yaml, CI-friendly exit codes
   generator/            TS ESM CLI, sources/ adapters, MCP introspection first
   site/                 static, Cloudflare Pages root=site, no build step
@@ -194,7 +194,7 @@ GitHub org: `Catalyst-Forge-LLC`, repo `agent-facts` (owner creates and pushes).
 
 ## Milestones
 
-1. `SPEC.md` v0.1.0 + canonical JSON Schema + template + worked ForgeKit example
+1. `SPEC.md` v0.1.0 + canonical JSON Schema + template + worked ForgeTrail example
    (hand-authored, passes validation).
 2. Validator CLI.
 3. Generator: MCP introspection source + local config source, optional LLM curation.
@@ -205,7 +205,7 @@ GitHub org: `Catalyst-Forge-LLC`, repo `agent-facts` (owner creates and pushes).
 ## Acceptance criteria
 
 - The worked example and template both pass the validator.
-- The generator, pointed at the reference agent's config (ForgeKit MCP server
+- The generator, pointed at the reference agent's config (ForgeTrail MCP server
   attached), produces a draft whose deterministic fields (tool count, names) are
   exactly correct with no LLM involved.
 - A stranger can read an `AGENT_FACTS.md` and answer, in under a minute: can it

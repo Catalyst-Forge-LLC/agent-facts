@@ -40,7 +40,7 @@ One configuration per `kind`:
 
 | Slug | Kind | Autonomy | FS | Network |
 |---|---|---|---|---|
-| [forgekit-reference](./examples/forgekit-reference/AGENT_FACTS.md) | cli-agent | reactive | none | none |
+| [forgetrail-reference](./examples/forgetrail-reference/AGENT_FACTS.md) | cli-agent | reactive | none | none |
 | [ide-coding-agent](./examples/ide-coding-agent/AGENT_FACTS.md) | ide-extension | supervised | read-write | none |
 | [autonomous-researcher](./examples/autonomous-researcher/AGENT_FACTS.md) | autonomous-service | autonomous | scoped | unrestricted |
 | [support-chatbot](./examples/support-chatbot/AGENT_FACTS.md) | chatbot | reactive | none | allowlist |
@@ -65,7 +65,7 @@ Catalog: [`examples/index.json`](./examples/index.json). Template:
 ```bash
 cd validator
 pnpm install
-pnpm validate ../examples/forgekit-reference/AGENT_FACTS.md
+pnpm validate ../examples/forgetrail-reference/AGENT_FACTS.md
 pnpm validate ../examples/*/AGENT_FACTS.md
 ```
 
