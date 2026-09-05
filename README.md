@@ -85,6 +85,8 @@ Generator stubbed. Planned after ToolFacts MCP introspection core. See
 
 ## Website
 
+The static site for [agentfacts.dev](https://agentfacts.dev) lives in [`site/`](./site/). Publish with `pnpm ship` (Wrangler Pages project `agent-facts`, no build step). Git-connected Pages can also use project root `site`.
+
 | Path | Purpose |
 |---|---|
 | [`site/index.html`](./site/index.html) | Landing |
