@@ -2,7 +2,7 @@
   "name": "agent-facts",
   "private": true,
   "scripts": {
-    "ship": "wrangler pages deploy site --project-name=agent-facts"
+    "ship": "wrangler deploy --config site/wrangler.jsonc"
   },
   "devDependencies": {
     "wrangler": "^4.28.0"
