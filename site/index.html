@@ -523,6 +523,7 @@ generated:
         <p>
           Open label opens the portable <a href="/v">/v</a> viewer (flip for raw). Machine index: <a href="/examples/index.json"><code>/examples/index.json</code></a>.
           Several exemplars compose ToolFacts via <code>tools.toolsets</code>.
+          ForgeTrail is the Catalyst Forge dogfood reference.
         </p>
         <ul class="who">
           <li><a href="/v#ag1.eNpFUstqIzEQ_BXT53kkua1uxpDLGgLZ3JYwyFLPjLCk1qp7PDHG_75IdpybaEpV1dV1gROo5waiDggKXilP-NvJ5h1HzBgNbrYTRoEGLJ7QU8IMCnZatD-zbCoeGji6aEGB8a7VdzyLloVBgTbiTgXkncHIRWabtJmxfemeoIFAFj2oCxxctC5OoGAmljZlOjmL9hvCoP5-XhsQovK-gKElCqiXXw3gF5pFkAee0XtQo_aMDRwyrYw8rHh4zIwWnCg7LHwwLc7qaIo9wZC8FmRoQC_WCXzexVAqtuv6ruvLpB21Ee7xS4fkkfuxxHB00gaT-o-3t_3wut19_OmCheI4ozZzcTw6j3xmwQAKIsUiG1FWysefgUUWF7U4inXlBkxGi1Gc9jxk_Le4jPYehl6EIoVzYfflQqCq3D1ynUqK2j--DSPlGymjHwdPlGrkNZxrAwED5cqWMLNjKR348ebJVGOgYInWsfHEaOHaAE4ZuZ5F0GNAKSyPlbTogWddfd-G1wZORaFyPXXPtQozBUx6KoKzSGLV9-u6duZetxpzZyj0UEJNxE6q2wd6cjIvhwr57mhbO9ru97vbmdqjK_WUvMRSBQtK8oLX_3D3DMc">forgetrail-reference</a> · <a href="/examples/forgetrail-reference/AGENT_FACTS.md">raw</a> - <code>cli-agent</code>, reactive, no FS/network</li>
@@ -538,8 +539,8 @@ generated:
       <div class="wrap">
         <h2 class="section-title">Validate one</h2>
         <p class="section-lead">
-          Hand-author from the template today. The generator (MCP introspection + config scan)
-          ships next; ToolFacts' introspection core comes first.
+          Hand-author from the template. Label the shipped defaults, then point
+          <code>tools.toolsets</code> at the ToolFacts file. The validator is the CI gate.
         </p>
         <div class="split">
           <pre># validate any AGENT_FACTS.md (CI-friendly exit codes)
@@ -553,8 +554,8 @@ pnpm validate ../examples/*/AGENT_FACTS.md</pre>
               Frontmatter is the sole source of truth; the Markdown body is the human label.
             </p>
             <p>
-              On the roadmap: generator from agent configs and MCP tool lists, directory of
-              labeled public agents, portable QR labels and badges.
+              ForgeTrail's reference config is the dogfood exemplar. Next suite work is Panel
+              (derived tool-surface drift), not a public directory of other people's agents.
             </p>
             <ul class="links">
               <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts">github.com/Catalyst-Forge-LLC/agent-facts</a></li>

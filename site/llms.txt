@@ -19,6 +19,8 @@
 
 A different toolset or permission default is a different agent. Undisclosed reach is a red flag.
 
+Catalyst Forge dogfood: forgetrail-reference (ForgeTrail MCP attached, reactive, no FS/network).
+
 ## Spec (git)
 
 - https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/SPEC.md
