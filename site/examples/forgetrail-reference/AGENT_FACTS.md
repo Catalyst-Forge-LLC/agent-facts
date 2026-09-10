@@ -31,10 +31,10 @@ memory:
   persistence: none
   location: undisclosed
 egress:
-  telemetry: none
-  data_shared: none
+  telemetry: undisclosed
+  data_shared: undisclosed
 generated:
-  date: 2026-08-07
+  date: 2026-09-10
   generator: hand-authored
 credits:
   generated_with: https://agentfacts.dev
@@ -51,9 +51,15 @@ credits:
 | **License** | Apache-2.0 |
 | **Version** | 0.1.0 |
 
-*Shipped configuration: a coding CLI agent with the ForgeTrail MCP server attached.
-The MCP server is labeled separately in ToolFacts
-([`forgetrail-mcp/TOOL_FACTS.md`](../../../tool-facts/examples/forgetrail-mcp/TOOL_FACTS.md)).*
+*This file labels one configuration: a CLI host with only the ForgeTrail MCP
+server attached. Filesystem `none` and network `none` describe that attached
+toolset. They do not describe a typical coding host that also grants workspace
+or shell tools. That wider host is a different label. Host model binding is
+`host-provided`. Host telemetry is `undisclosed`, not proven empty. The MCP
+server is labeled separately in ToolFacts
+([`forgetrail-mcp/TOOL_FACTS.md`](../../../tool-facts/examples/forgetrail-mcp/TOOL_FACTS.md)).
+ForgeTrail `runAudit` returns a packaged audit prompt and does not scan the
+user workspace.*
 
 ## Model
 
@@ -100,8 +106,8 @@ The MCP server is labeled separately in ToolFacts
 
 | | |
 |---|---|
-| Telemetry | none |
-| Data shared | none |
+| Telemetry | undisclosed |
+| Data shared | undisclosed |
 
 ---
 *Generated with [AgentFacts](https://agentfacts.dev) · Built by [Catalyst Forge](https://www.catalystforge.com/)*

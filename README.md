@@ -8,6 +8,7 @@
   A tiny, standardized <code>AGENT_FACTS.md</code> that labels a
   <em>configuration</em>, not a codebase, and answers one question in under a minute:
   <em>what can this agent reach before I let it run?</em>
+  Configured intent is not enforced host behavior.
 </p>
 
 <p align="center">
@@ -31,8 +32,13 @@ the **playbook** an agent may be taught to follow.
 **A label describes a configuration, not a codebase.** The same agent binary with different
 tools or permission defaults is a different agent.
 
-**The Golden Rule:** subjective vibes stay out; objective reach/autonomy/egress stay in.
+**The Golden Rule:** subjective vibes stay out. Declared reach, autonomy, and egress stay in.
+Those fields describe this configuration. They do not prove the host enforces them on every run.
 `undisclosed` beats guessing. An agent that will not say what it can touch is a loud red flag.
+
+Identify a label with `name`, `version` when present, `repository`, `generated.date`, and the
+`tools.toolsets` you reviewed. A later tool or permission change is a new file. There is no
+configuration digest in the current schema.
 
 ## Exemplars
 
@@ -41,6 +47,7 @@ One configuration per `kind`:
 | Slug | Kind | Autonomy | FS | Network |
 |---|---|---|---|---|
 | [forgetrail-reference](./examples/forgetrail-reference/AGENT_FACTS.md) | cli-agent | reactive | none | none |
+| [forgetrail-host-workspace](./examples/forgetrail-host-workspace/AGENT_FACTS.md) | cli-agent (illustrative wider host) | supervised | read-write | none |
 | [ide-coding-agent](./examples/ide-coding-agent/AGENT_FACTS.md) | ide-extension | supervised | read-write | none |
 | [autonomous-researcher](./examples/autonomous-researcher/AGENT_FACTS.md) | autonomous-service | autonomous | scoped | unrestricted |
 | [support-chatbot](./examples/support-chatbot/AGENT_FACTS.md) | chatbot | reactive | none | allowlist |

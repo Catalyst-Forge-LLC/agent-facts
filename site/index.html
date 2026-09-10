@@ -55,11 +55,11 @@
     }
 
     .hero {
-      min-height: 100svh;
+      min-height: auto;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 2.25rem 0 0;
+      justify-content: flex-start;
+      padding: 1.5rem 0 0;
       position: relative;
       overflow: hidden;
     }
@@ -78,7 +78,7 @@
 
     .hero-copy {
       position: relative;
-      padding-bottom: 1.75rem;
+      padding-bottom: 1.1rem;
       animation: fadeup 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
     }
 
@@ -87,10 +87,10 @@
     .brand {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: clamp(3rem, 8vw, 5rem);
+      font-size: clamp(2.4rem, 7vw, 3.8rem);
       letter-spacing: -0.04em;
       line-height: 0.95;
-      margin: 0 0 1rem;
+      margin: 0 0 0.7rem;
       color: #fff;
     }
 
@@ -102,18 +102,43 @@
     .lede {
       font-family: var(--font-display);
       font-weight: 500;
-      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
       line-height: 1.35;
       color: #e8eef5;
-      max-width: 32ch;
-      margin: 0 0 0.85rem;
+      max-width: 36ch;
+      margin: 0 0 0.7rem;
     }
 
     .sub {
       color: var(--mute);
-      max-width: 48ch;
-      margin: 0 0 1.75rem;
+      max-width: 52ch;
+      margin: 0 0 1.15rem;
     }
+
+    .compare {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 800px) {
+      .compare { grid-template-columns: 1fr 1fr; }
+    }
+
+    .compare article {
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(26, 34, 44, 0.4);
+    }
+
+    .compare h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 0 0.4rem;
+      color: #fff;
+    }
+
+    .compare p { margin: 0 0 0.65rem; color: #c9d3de; font-size: 0.85rem; }
 
     .cta {
       display: flex;
@@ -389,35 +414,36 @@
   <header class="hero">
     <div class="wrap hero-copy">
       <h1 class="brand">Agent<span>Facts</span></h1>
-      <p class="lede">A Nutrition Facts label for AI agents, part of the <a href="https://xfacts.dev">xFacts</a> suite.</p>
+      <p class="lede">Label the configuration you actually run. Part of the <a href="https://xfacts.dev">xFacts</a> suite.</p>
       <p class="sub">
-        Know what it can reach before you let it run. A tiny <code>AGENT_FACTS.md</code> that labels a
-        <strong>configuration</strong>, not a codebase: tools, reach, leash, and egress.
+        Model binding, tools, reach, autonomy, memory, and declared egress. Configured intent is
+        not enforced host behavior. The same binary with a wider toolset needs a new file.
       </p>
       <div class="cta">
-        <a class="btn btn-primary" href="https://github.com/Catalyst-Forge-LLC/agent-facts">View on GitHub</a>
+        <a class="btn btn-primary" href="#compare">Compare two configs</a>
         <a class="btn btn-ghost" href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/SPEC.md">Read the spec</a>
         <a class="btn btn-ghost" href="#write">Validate one</a>
       </div>
     </div>
 
-    <div class="label-plane" aria-label="Example Agent Facts label">
+    <div class="label-plane" aria-label="Featured Agent Facts label for ForgeTrail MCP-only">
       <div class="label-plane-inner">
         <h2>Agent Facts</h2>
-        <div class="serving">Serving size: one configuration · Read time: under a minute</div>
+        <div class="serving">ForgeTrail Reference Agent · version 0.1.0 · as of 2026-09-10</div>
         <div class="label-cols">
           <div class="row thick"><strong>Kind</strong><span>cli-agent</span></div>
           <div class="row thick"><strong>Model binding</strong><span>host-provided</span></div>
-          <div class="row"><strong>Tools</strong><span>29 · no shell · no browse</span></div>
+          <div class="row"><strong>Tools</strong><span>29 · ForgeTrail MCP only</span></div>
           <div class="row"><strong>Filesystem</strong><span>none</span></div>
           <div class="row"><strong>Network</strong><span>none</span></div>
           <div class="row"><strong>Autonomy</strong><span>reactive</span></div>
           <div class="row thick"><strong>Self-looping</strong><span>false</span></div>
-          <div class="row thick"><strong>Telemetry</strong><span>none</span></div>
+          <div class="row thick"><strong>Telemetry</strong><span>undisclosed</span></div>
           <div class="deps">
-            <b>Composition</b>
-            Toolset detail in <code>TOOL_FACTS.md</code> · model may link <code>MODEL_FACTS.md</code> ·
-            same agent binary, different config = different label
+            <b>Actor boundary</b>
+            These none values describe the attached ForgeTrail tools, not a host that also
+            grants workspace or shell. Host model and host telemetry stay host-provided or
+            undisclosed. <a href="/examples/forgetrail-reference/AGENT_FACTS.md">raw YAML</a>
           </div>
         </div>
       </div>
@@ -443,8 +469,10 @@
         </p>
         <p>
           <strong>The golden rule:</strong> if it's subjective (<em>"this agent is very careful"</em>)
-          it doesn't belong here. If it's objective (<em>"requires approval before filesystem writes"</em>)
-          it does. When a fact isn't public, the file says <code>undisclosed</code>.
+          it doesn't belong here. If it's a declared configuration fact
+          (<em>"this file says approval is required before filesystem writes"</em>) it does.
+          That declaration is not proof the host enforces it on every run. When a fact isn't
+          public, the file says <code>undisclosed</code>.
         </p>
         <ul class="who">
           <li>Operators deciding whether to unclip an agent on a real workspace</li>
@@ -467,6 +495,7 @@ developer: Catalyst Forge
 kind: cli-agent
 status: active
 license: Apache-2.0
+version: "0.1.0"
 model:
   binding: host-provided
 tools:
@@ -474,7 +503,7 @@ tools:
   executes_shell: false
   browses_web: false
   toolsets:
-    - ../tool-facts/examples/TOOL_FACTS.md
+    - ../tool-facts/examples/forgetrail-mcp/TOOL_FACTS.md
 reach:
   filesystem: none
   network: none
@@ -485,10 +514,10 @@ memory:
   persistence: none
   location: undisclosed
 egress:
-  telemetry: none
-  data_shared: none
+  telemetry: undisclosed
+  data_shared: undisclosed
 generated:
-  date: 2026-08-03
+  date: 2026-09-10
   generator: hand-authored
 ---</pre>
           <div class="prose">
@@ -506,7 +535,7 @@ generated:
               <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/SPEC.md">SPEC.md</a></li>
               <li><a href="/schema/agent-facts.schema.json">JSON Schema</a></li>
               <li><a href="/examples/index.json">Exemplar catalog (JSON)</a></li>
-              <li><a href="/v#ag1.eNpFUstqIzEQ_BXT53kkua1uxpDLGgLZ3JYwyFLPjLCk1qp7PDHG_75IdpybaEpV1dV1gROo5waiDggKXilP-NvJ5h1HzBgNbrYTRoEGLJ7QU8IMCnZatD-zbCoeGji6aEGB8a7VdzyLloVBgTbiTgXkncHIRWabtJmxfemeoIFAFj2oCxxctC5OoGAmljZlOjmL9hvCoP5-XhsQovK-gKElCqiXXw3gF5pFkAee0XtQo_aMDRwyrYw8rHh4zIwWnCg7LHwwLc7qaIo9wZC8FmRoQC_WCXzexVAqtuv6ruvLpB21Ee7xS4fkkfuxxHB00gaT-o-3t_3wut19_OmCheI4ozZzcTw6j3xmwQAKIsUiG1FWysefgUUWF7U4inXlBkxGi1Gc9jxk_Le4jPYehl6EIoVzYfflQqCq3D1ynUqK2j--DSPlGymjHwdPlGrkNZxrAwED5cqWMLNjKR348ebJVGOgYInWsfHEaOHaAE4ZuZ5F0GNAKSyPlbTogWddfd-G1wZORaFyPXXPtQozBUx6KoKzSGLV9-u6duZetxpzZyj0UEJNxE6q2wd6cjIvhwr57mhbO9ru97vbmdqjK_WUvMRSBQtK8oLX_3D3DMc">Open ForgeTrail reference label</a></li>
+              <li><a href="/v#ag1.eNpdUl1r4zAQ_Cthn2W77dvpLQT6FCjc5e0oZiOtbRF9-LTruCHkvx9S05S7N7HMzoxm5wpn0M8KIgYCDa8pj3TI6PzmJw2UKRrabEeKAgosncmnmTJo2KGgv7Bs6gYoOLloQYPxrsE7ngVlYdCARty5gLwzFLkIbWc0EzUv7RMoCMmSB32Fo4vWxRE0TImlmXM6O0v2C8Kgf7_fFEhK5X0Fk5YooF9-KKAPMosQ9zyR96AH9EwKjjmtTNyvdHzMDAqNKTsqfDAuzmI0xZ5QmD0KMSjAxTqB97sYScW2bde2XZk0Axrhjj4wzJ64G0oMUoJrgpm7w9vbvn_d7g6_2mCheM6EZiqeB-eJLywUQENMsQhHkjXl0_fAEouLKC7F-mkFJpOlKA4995n-LC6TvceBi6SYwqWw-3Ij0FXuHjrOJUf0j7V-SPmTlMkPvU9prqHXeG4KAoWUK9tMmR1LacG3N59MNQYalmgdG5-YLNwU0JiJ62GEPAWSwvIPSIFFwZ4nrPb_JzgXvcr81D7Xakwp0IxjkZ9EZtZdt65ra-71q7G3JoUOSsRzYifV-wM9OpmWY4V8dbapnW32-93n2ZqTK3WVvMRSDQta8kK3v9oZFEk">Open ForgeTrail reference label</a></li>
               <li><a href="/examples/forgetrail-reference/AGENT_FACTS.md">ForgeTrail reference raw Markdown</a></li>
               <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/examples/AGENT_FACTS.template.md">Template</a></li>
               <li><a href="/llms.txt">llms.txt</a></li>
@@ -516,17 +545,73 @@ generated:
       </div>
     </section>
 
+    <section id="compare">
+      <div class="wrap">
+        <h2 class="section-title">Same agent, two configurations</h2>
+        <p class="section-lead">ForgeTrail MCP only versus the same agent when the host also grants workspace and shell.</p>
+        <div class="compare">
+          <article>
+            <h3>MCP only</h3>
+            <p>
+              <a href="/examples/forgetrail-reference/AGENT_FACTS.md">forgetrail-reference</a>
+              · version 0.1.0 · 2026-09-10. Attached capability: 29 ForgeTrail tools.
+              Filesystem none, network none, no shell. Host model is host-provided.
+              Host telemetry is undisclosed.
+            </p>
+            <p>
+              Question the label can answer: does this file attach workspace write tools?
+              No. Question it cannot answer: will a specific host process enforce that
+              boundary on every run?
+            </p>
+          </article>
+          <article>
+            <h3>Host workspace (illustrative)</h3>
+            <p>
+              <a href="/examples/forgetrail-host-workspace/AGENT_FACTS.md">forgetrail-host-workspace</a>
+              · same agent, wider host policy. Attached capability now includes workspace
+              read-write and shell. Autonomy is supervised, with declared approval for
+              writes and shell. That is configured intent, not proven enforcement.
+            </p>
+            <p>
+              The narrower label does not constrain this host. Tool count 31 is
+              illustrative. Host workspace tools are not given ToolFacts files here.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="identity">
+      <div class="wrap prose">
+        <h2 class="section-title">What this file describes</h2>
+        <p class="section-lead">Bind the label to a configuration and a date, then regenerate when the toolset or permissions change.</p>
+        <p>
+          Identify the subject with <code>name</code>, optional <code>version</code>,
+          <code>repository</code>, and <code>generated.date</code>. Point
+          <code>tools.toolsets</code> at the ToolFacts files you actually reviewed.
+          A later tool add, host permission change, or model-binding change is a new
+          configuration. An older review does not cover it.
+        </p>
+        <p>
+          There is no configuration digest in the current schema. A digest over a
+          canonicalized config document is a separate proposal, documented with the
+          suite provenance note. Do not treat this page as adding that field.
+        </p>
+      </div>
+    </section>
+
     <section id="examples">
       <div class="wrap prose">
         <h2 class="section-title">Exemplar ladder</h2>
-        <p class="section-lead">One configuration per <code>kind</code>, so leash and blast radius can be compared.</p>
+        <p class="section-lead">One configuration per <code>kind</code>, plus a second ForgeTrail host policy so leash and blast radius can be compared.</p>
         <p>
           Open label opens the portable <a href="/v">/v</a> viewer (flip for raw). Machine index: <a href="/examples/index.json"><code>/examples/index.json</code></a>.
           Several exemplars compose ToolFacts via <code>tools.toolsets</code>.
           ForgeTrail is the Catalyst Forge dogfood reference.
         </p>
         <ul class="who">
-          <li><a href="/v#ag1.eNpFUstqIzEQ_BXT53kkua1uxpDLGgLZ3JYwyFLPjLCk1qp7PDHG_75IdpybaEpV1dV1gROo5waiDggKXilP-NvJ5h1HzBgNbrYTRoEGLJ7QU8IMCnZatD-zbCoeGji6aEGB8a7VdzyLloVBgTbiTgXkncHIRWabtJmxfemeoIFAFj2oCxxctC5OoGAmljZlOjmL9hvCoP5-XhsQovK-gKElCqiXXw3gF5pFkAee0XtQo_aMDRwyrYw8rHh4zIwWnCg7LHwwLc7qaIo9wZC8FmRoQC_WCXzexVAqtuv6ruvLpB21Ee7xS4fkkfuxxHB00gaT-o-3t_3wut19_OmCheI4ozZzcTw6j3xmwQAKIsUiG1FWysefgUUWF7U4inXlBkxGi1Gc9jxk_Le4jPYehl6EIoVzYfflQqCq3D1ynUqK2j--DSPlGymjHwdPlGrkNZxrAwED5cqWMLNjKR348ebJVGOgYInWsfHEaOHaAE4ZuZ5F0GNAKSyPlbTogWddfd-G1wZORaFyPXXPtQozBUx6KoKzSGLV9-u6duZetxpzZyj0UEJNxE6q2wd6cjIvhwr57mhbO9ru97vbmdqjK_WUvMRSBQtK8oLX_3D3DMc">forgetrail-reference</a> · <a href="/examples/forgetrail-reference/AGENT_FACTS.md">raw</a> - <code>cli-agent</code>, reactive, no FS/network</li>
+          <li><a href="/v#ag1.eNpdUl1r4zAQ_Cthn2W77dvpLQT6FCjc5e0oZiOtbRF9-LTruCHkvx9S05S7N7HMzoxm5wpn0M8KIgYCDa8pj3TI6PzmJw2UKRrabEeKAgosncmnmTJo2KGgv7Bs6gYoOLloQYPxrsE7ngVlYdCARty5gLwzFLkIbWc0EzUv7RMoCMmSB32Fo4vWxRE0TImlmXM6O0v2C8Kgf7_fFEhK5X0Fk5YooF9-KKAPMosQ9zyR96AH9EwKjjmtTNyvdHzMDAqNKTsqfDAuzmI0xZ5QmD0KMSjAxTqB97sYScW2bde2XZk0Axrhjj4wzJ64G0oMUoJrgpm7w9vbvn_d7g6_2mCheM6EZiqeB-eJLywUQENMsQhHkjXl0_fAEouLKC7F-mkFJpOlKA4995n-LC6TvceBi6SYwqWw-3Ij0FXuHjrOJUf0j7V-SPmTlMkPvU9prqHXeG4KAoWUK9tMmR1LacG3N59MNQYalmgdG5-YLNwU0JiJ62GEPAWSwvIPSIFFwZ4nrPb_JzgXvcr81D7Xakwp0IxjkZ9EZtZdt65ra-71q7G3JoUOSsRzYifV-wM9OpmWY4V8dbapnW32-93n2ZqTK3WVvMRSDQta8kK3v9oZFEk">forgetrail-reference</a> · <a href="/examples/forgetrail-reference/AGENT_FACTS.md">raw</a> - <code>cli-agent</code>, reactive, ForgeTrail MCP only</li>
+          <li><a href="/v#ag1.eNpdUktr3DAQ_ivLnFqQ7aS96RYCOQUCbW4lmFlpbIvIkqoZrxPC_vcyyqNpb0aMv_cLnMBeGki4Eli4yXWm-4ohHn7QRJWSo8PVTEkOX5bMcthzfeSCjr6CAU8nirlQBQvXKBifWQ4N4vAlxLixVJRwarePIXmw4GLoUPHAAAvKxmABnV6BgRgcJVYhVwXdQt23_gIMrNlTBPsCx5B8SDNYUDFdqfkUPPn3Ewb76-FsQHLW7xdweUsC9vulAXoitwnxyAvFCFbqRgaONe9MPO50BDthZDLgUGjONZDCwbwFj8mpOqG1RBRiMICbD-phCpH4mYVWNdSgH94EkDSAvh_6ftCXbkInPNATriUSD5MmJRp2t7oy3N_d3Y43V9f3P_vVg_qohG5RH59YrL76bq9BVFMi0UrAQsqJWicsIaGEnFocBlwlT0kCRh4r_d5CJf8WFG6SU16flSNqmWCBt0L1FLjFikUzxvjx4zjlqq4aP3_2zBSnMeZcWkEty7OBldZcG36hyoFFF_VXbcyuSQULW_KBXcxKfDZAcyVuJQpFWkkU5Z8jAx4FR16wGfof4KR8Dfmiv2wzWvJKBWelX0QK22HY9713b8ttdfQurwNo9CVzkKb943oOsmzHdvI-967Nvbu9vX6ts3tss5C6Jd2Rfx3a-Q-mJy-Q">forgetrail-host-workspace</a> · <a href="/examples/forgetrail-host-workspace/AGENT_FACTS.md">raw</a> - same agent, illustrative host workspace and shell</li>
           <li><a href="/v#ag1.eNp9UstqHDEQ_JWhTw5oZ-1cArot6xgCAR_iWzBDr9QzK6yRJurWPlj230PLTuxDyGkGUdVVXV0XOIC9M5BwJrDw7f5rt80-pKnbTJSku-G6UDkEJt95GrFG4U9gwNOBYl6ogIUtCsYzS_eQy0TdTYixshSUcCDFvoTkwULwtKKTUOKQExhgQakMFtApEgzE4Cix-tgs6Pa0-tzfgoE5e4pgL7ALSa2BBZfTGKZacBfpD4LB_ny-GpCc9f8CLtckYL8YoBO5KsQD7ylGsFIqGdiVfGTi4Ug7sCNGJgMOhaZcAuk0GEMkPrPQrH4b1wD5IPD8pkPSgH2_7vu1vqxGdMJrOuG8ROL1-4jV7Jb10-Pj9-Fhs3360c8ezH-ITe4fHF2xELq9rvjBoNVXvzqWIBpJIjnm8gIWUk7ULsYSEkrIqSVlwBXylCRg5KHQrxoK-bcMsUpOeT6rRtRTg4X3JoABXJaSDxj_EocxF02i6fOHuFS31NcTPxtgiuMQc17aIVvqVwMzzbk0tYUKBxZKTnsQs0Mdol91DhZ0K17QUdejVnTdvZK7lgVcDdBUiFsDhCLNJDoZMOV0nnNVbx4FB95jWxgq40Sd4oJrAw7qoYnd9netglJq0mr41-5cfwNb6x1H">ide-coding-agent</a> · <a href="/examples/ide-coding-agent/AGENT_FACTS.md">raw</a> - <code>ide-extension</code>, supervised writes/shell</li>
           <li><a href="/v#ag1.eNplkkFrHDEMhf_KoFML3tmkvfkWAjkFAmlKDyEMXs-bXROPPZXk2U1D_nuxs00pvVrWe5_09Eor2UtDyc0gS1dFc8pzLtL9wK67h8CxP4DJ0IgVMS9gsnTt1MUX0e4m8x7dpxBjEWWnYcVnMvQc0kiW3IfcRsBr8CBDok6LkKWFsQYcyVAMHkkawOL8AZsv_QUZmvOISPaVdiGNIe3J0hROGP-UhOwjlTQG8TELRnp6M6Q518Ir-VySkv1qCCf4opBBDoiR7OSiwNCO81EgwxE7ssoFhrxT7DMHNOkJ6g-VuMyz4_DrnT4z6OnsA20f-37b99v6spmcV9ni5OYlQrZNYjP7Zftwd3c73FxdP3zr53dShvOHSjqFCHkRxUyWxOeljZigx8zPZKkkhigHr60wQjQkpyGn_zdgyDNGJA0uysD4WQJjJPtYHc95vFTTWOP8JyMy5JaF8-riR-MwZa7NhgRxGmLOSwuiruvN0Iw5c5NbwBJEkXyN0cdcKmrMvnG2If5SvhnCniEtJ0XEDK0yFBr5FN7ndOoGObjGTwvneVExXVspxu77_a2Yrojbo6v9wUsVXitIc7zoL9sZKZdUgx3P2L8BYSoIkw">autonomous-researcher</a> · <a href="/examples/autonomous-researcher/AGENT_FACTS.md">raw</a> - <code>autonomous-service</code>, self-loop + open web</li>
           <li><a href="/v#ag1.eNp1Uk1rGzEQ_SvLnBKQTVN60q2EFkrAMU1DKSUssjRrC2s125nR2sb4vxfJbUgPveqN3se8OcMM9s5AdiOChfsiSiNy91SmiVi7-53TDSkYCDhjogm5jjl16STafSbeYncTUyqi7DTOeAsG9jEHsOBfP4s6LQIWnK8zYCBFj1mq5vPqYfX4fQUGRgqYwJ5hE3OIeQsWhnjE8BcSsD-h5BDFJxIM8HIxoEQVOIOnkhXsBwN4RF8UpZcdpgR2cEnQwIbpICj9ATevb94pbokjNu79ZiHo2O_AgEa_x-qdcSg5LBLRvkxNktH5XZUcYkI5ieIIFjLlGiyjHoj3NWtKdEhRrtsTjdlppNyU3BSXeHTjlHAh110vY55dijXtfvNf8MWAZwyYNbokPeOvEhlD5Xx6Xq8fv37rP66_9A-ffjSrrihlGk_VbaoNgm32_7TgpolpdumVpx-IK9cbjSopmIY-EU2tlba7i4ERR-JGPSFLFMXsa6M-UakxEvmWGCzMmANx5ynPyNJeO1Fi7G7eFNoxbiPlW7gYwC2jtGIVE46oVQliczXEdhTBqetl51p-mJjGScX8K6LssniODSnitthVruilitS5q8H3y7vlu1o7l1yPIoBVLnj5DZETGtY">support-chatbot</a> · <a href="/examples/support-chatbot/AGENT_FACTS.md">raw</a> - <code>chatbot</code>, cloud memory, identified egress</li>
@@ -551,7 +636,8 @@ pnpm validate ../examples/*/AGENT_FACTS.md</pre>
             <p>
               Output is checked against
               <a href="/schema/agent-facts.schema.json">agent-facts.schema.json</a> (draft-07).
-              Frontmatter is the sole source of truth; the Markdown body is the human label.
+              Frontmatter is the sole source of truth. The Markdown body is the human label.
+              Validation is structural checking, not proof of compliance in every run.
             </p>
             <p>
               ForgeTrail's reference config is the dogfood exemplar. Next suite work is Panel

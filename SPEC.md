@@ -188,6 +188,14 @@ Suite contract: [x-facts `DISCOVERY-AND-PUBLICATION.md`](../x-facts/specs/DISCOV
 | **0.1.1** | Publication & discovery: host pointers; URL-preferred `toolsets` / model refs; link to suite discovery contract. |
 | **0.1.0** | Initial specification, formalizing [`GENESIS.md`](./GENESIS.md): frontmatter + rendered body, six fact groups (model, tools, reach, autonomy, memory, egress) plus identity fields, closed enums, `undisclosed` convention, actor/instrument boundary with ToolFacts. |
 
+## Compatible proposals (not implemented)
+
+- Add `undisclosed` to `reach.filesystem` and `reach.network` so unknown host
+  reach is not forced into `none`. Older files stay valid.
+- Optional `reviewed` object and optional configuration digest, with
+  canonicalization rules, as described in the suite provenance note. Do not
+  treat those fields as present in this schema.
+
 ## License
 
 CC0 - public domain. No attribution required.

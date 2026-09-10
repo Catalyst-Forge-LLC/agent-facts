@@ -18,8 +18,10 @@
 4. Validate frontmatter against the schema.
 
 A different toolset or permission default is a different agent. Undisclosed reach is a red flag.
+Configured fields are declared intent. Schema validation does not prove the host enforces them.
 
-Catalyst Forge dogfood: forgetrail-reference (ForgeTrail MCP attached, reactive, no FS/network).
+Catalyst Forge dogfood: forgetrail-reference (ForgeTrail MCP only, reactive, no FS/network, host telemetry undisclosed). Illustrative wider host: forgetrail-host-workspace.
+ForgeTrail runAudit returns a packaged audit prompt and does not scan the user workspace.
 
 ## Spec (git)
 

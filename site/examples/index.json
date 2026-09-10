@@ -1,7 +1,7 @@
 {
   "label": "agent-facts",
   "version": "0.1.0",
-  "updated": "2026-08-07",
+  "updated": "2026-09-10",
   "schema": "https://agentfacts.dev/schema/agent-facts.schema.json",
   "note": "Curated configuration exemplars. Illustrative agents are not product certificates.",
   "exemplars": [
@@ -15,7 +15,19 @@
       "self_looping": false,
       "path": "forgetrail-reference/AGENT_FACTS.md",
       "dogfood": true,
-      "viewer": "/v#ag1.eNpFUstqIzEQ_BXT53kkua1uxpDLGgLZ3JYwyFLPjLCk1qp7PDHG_75IdpybaEpV1dV1gROo5waiDggKXilP-NvJ5h1HzBgNbrYTRoEGLJ7QU8IMCnZatD-zbCoeGji6aEGB8a7VdzyLloVBgTbiTgXkncHIRWabtJmxfemeoIFAFj2oCxxctC5OoGAmljZlOjmL9hvCoP5-XhsQovK-gKElCqiXXw3gF5pFkAee0XtQo_aMDRwyrYw8rHh4zIwWnCg7LHwwLc7qaIo9wZC8FmRoQC_WCXzexVAqtuv6ruvLpB21Ee7xS4fkkfuxxHB00gaT-o-3t_3wut19_OmCheI4ozZzcTw6j3xmwQAKIsUiG1FWysefgUUWF7U4inXlBkxGi1Gc9jxk_Le4jPYehl6EIoVzYfflQqCq3D1ynUqK2j--DSPlGymjHwdPlGrkNZxrAwED5cqWMLNjKR348ebJVGOgYInWsfHEaOHaAE4ZuZ5F0GNAKSyPlbTogWddfd-G1wZORaFyPXXPtQozBUx6KoKzSGLV9-u6duZetxpzZyj0UEJNxE6q2wd6cjIvhwr57mhbO9ru97vbmdqjK_WUvMRSBQtK8oLX_3D3DMc"
+      "viewer": "/v#ag1.eNpdUl1r4zAQ_Cthn2W77dvpLQT6FCjc5e0oZiOtbRF9-LTruCHkvx9S05S7N7HMzoxm5wpn0M8KIgYCDa8pj3TI6PzmJw2UKRrabEeKAgosncmnmTJo2KGgv7Bs6gYoOLloQYPxrsE7ngVlYdCARty5gLwzFLkIbWc0EzUv7RMoCMmSB32Fo4vWxRE0TImlmXM6O0v2C8Kgf7_fFEhK5X0Fk5YooF9-KKAPMosQ9zyR96AH9EwKjjmtTNyvdHzMDAqNKTsqfDAuzmI0xZ5QmD0KMSjAxTqB97sYScW2bde2XZk0Axrhjj4wzJ64G0oMUoJrgpm7w9vbvn_d7g6_2mCheM6EZiqeB-eJLywUQENMsQhHkjXl0_fAEouLKC7F-mkFJpOlKA4995n-LC6TvceBi6SYwqWw-3Ij0FXuHjrOJUf0j7V-SPmTlMkPvU9prqHXeG4KAoWUK9tMmR1LacG3N59MNQYalmgdG5-YLNwU0JiJ62GEPAWSwvIPSIFFwZ4nrPb_JzgXvcr81D7Xakwp0IxjkZ9EZtZdt65ra-71q7G3JoUOSsRzYifV-wM9OpmWY4V8dbapnW32-93n2ZqTK3WVvMRSDQta8kK3v9oZFEk"
+    },
+    {
+      "slug": "forgetrail-host-workspace",
+      "name": "ForgeTrail Reference Agent (host workspace)",
+      "kind": "cli-agent",
+      "autonomy": "supervised",
+      "filesystem": "read-write",
+      "network": "none",
+      "self_looping": false,
+      "path": "forgetrail-host-workspace/AGENT_FACTS.md",
+      "dogfood": false,
+      "viewer": "/v#ag1.eNpdUktr3DAQ_ivLnFqQ7aS96RYCOQUCbW4lmFlpbIvIkqoZrxPC_vcyyqNpb0aMv_cLnMBeGki4Eli4yXWm-4ohHn7QRJWSo8PVTEkOX5bMcthzfeSCjr6CAU8nirlQBQvXKBifWQ4N4vAlxLixVJRwarePIXmw4GLoUPHAAAvKxmABnV6BgRgcJVYhVwXdQt23_gIMrNlTBPsCx5B8SDNYUDFdqfkUPPn3Ewb76-FsQHLW7xdweUsC9vulAXoitwnxyAvFCFbqRgaONe9MPO50BDthZDLgUGjONZDCwbwFj8mpOqG1RBRiMICbD-phCpH4mYVWNdSgH94EkDSAvh_6ftCXbkInPNATriUSD5MmJRp2t7oy3N_d3Y43V9f3P_vVg_qohG5RH59YrL76bq9BVFMi0UrAQsqJWicsIaGEnFocBlwlT0kCRh4r_d5CJf8WFG6SU16flSNqmWCBt0L1FLjFikUzxvjx4zjlqq4aP3_2zBSnMeZcWkEty7OBldZcG36hyoFFF_VXbcyuSQULW_KBXcxKfDZAcyVuJQpFWkkU5Z8jAx4FR16wGfof4KR8Dfmiv2wzWvJKBWelX0QK22HY9713b8ttdfQurwNo9CVzkKb943oOsmzHdvI-967Nvbu9vX6ts3tss5C6Jd2Rfx3a-Q-mJy-Q"
     },
     {
       "slug": "ide-coding-agent",
