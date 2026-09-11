@@ -101,11 +101,11 @@
       "properties": {
         "filesystem": {
           "type": "string",
-          "enum": ["none", "read", "read-write", "scoped"]
+          "enum": ["none", "read", "read-write", "scoped", "undisclosed"]
         },
         "network": {
           "type": "string",
-          "enum": ["none", "allowlist", "unrestricted"]
+          "enum": ["none", "allowlist", "unrestricted", "undisclosed"]
         },
         "destinations": {
           "type": "array",
@@ -176,6 +176,20 @@
       "properties": {
         "date": { "type": "string", "format": "date" },
         "generator": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "reviewed": {
+      "type": "object",
+      "description": "Optional human review stamp. Presence is not certification.",
+      "required": ["date", "by", "status"],
+      "properties": {
+        "date": { "type": "string", "format": "date" },
+        "by": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["publisher-authored", "independently-reviewed", "stale"]
+        }
       },
       "additionalProperties": false
     },

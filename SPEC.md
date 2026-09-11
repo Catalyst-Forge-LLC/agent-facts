@@ -1,4 +1,4 @@
-# AgentFacts Specification - v0.1.1
+# AgentFacts Specification - v0.1.2
 
 > *"Know what it can reach before you let it run."*
 
@@ -99,8 +99,8 @@ Filesystem scope, network destinations, credentials required.
 
 | Key | Type | Required | Values / description |
 |---|---|---|---|
-| `filesystem` | enum | ✅ | `none`, `read`, `read-write`, `scoped` |
-| `network` | enum | ✅ | `none`, `allowlist`, `unrestricted` |
+| `filesystem` | enum | ✅ | `none`, `read`, `read-write`, `scoped`, `undisclosed` |
+| `network` | enum | ✅ | `none`, `allowlist`, `unrestricted`, `undisclosed` |
 | `destinations` | string list | | Domains or URL patterns the agent may contact (v0.1: either form accepted) |
 | `credentials_required` | string list | | Credential names required before the agent works, e.g. `[GITHUB_TOKEN]` |
 
@@ -176,7 +176,7 @@ Suite contract: [x-facts `DISCOVERY-AND-PUBLICATION.md`](../x-facts/specs/DISCOV
 
 ## Versioning
 
-- **This document:** v0.1.1 (publication & discovery; see revision history).
+- **This document:** v0.1.2 (`undisclosed` on reach; optional `reviewed`).
 - **Files** declare `agent_facts_version` (currently `"0.1.0"`) so tooling can evolve
   independently of the prose document.
 - Required-field list may still change before v1.0.
@@ -185,16 +185,13 @@ Suite contract: [x-facts `DISCOVERY-AND-PUBLICATION.md`](../x-facts/specs/DISCOV
 
 | Spec doc | Notes |
 |---|---|
+| **0.1.2** | `reach.filesystem` and `reach.network` accept `undisclosed`. Optional `reviewed`. Configuration digest stays later. |
 | **0.1.1** | Publication & discovery: host pointers; URL-preferred `toolsets` / model refs; link to suite discovery contract. |
 | **0.1.0** | Initial specification, formalizing [`GENESIS.md`](./GENESIS.md): frontmatter + rendered body, six fact groups (model, tools, reach, autonomy, memory, egress) plus identity fields, closed enums, `undisclosed` convention, actor/instrument boundary with ToolFacts. |
 
-## Compatible proposals (not implemented)
-
-- Add `undisclosed` to `reach.filesystem` and `reach.network` so unknown host
-  reach is not forced into `none`. Older files stay valid.
-- Optional `reviewed` object and optional configuration digest, with
-  canonicalization rules, as described in the suite provenance note. Do not
-  treat those fields as present in this schema.
+Optional `reviewed` is an additive object (`date`, `by`, `status`). Presence is
+not certification. A configuration digest stays a later proposal until
+canonicalization is defined.
 
 ## License
 
