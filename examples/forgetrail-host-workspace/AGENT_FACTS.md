@@ -17,7 +17,7 @@ tools:
   browses_web: false
   categories: [guidance, templates, audit, filesystem, shell]
   toolsets:
-    - ../../tool-facts/examples/forgetrail-mcp/TOOL_FACTS.md
+    - https://toolfacts.dev/examples/forgetrail-mcp/TOOL_FACTS.md
 reach:
   filesystem: read-write
   network: none

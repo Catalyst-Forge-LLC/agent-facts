@@ -17,7 +17,7 @@ tools:
   browses_web: false
   categories: [guidance, templates, audit]
   toolsets:
-    - ../../tool-facts/examples/forgetrail-mcp/TOOL_FACTS.md
+    - https://toolfacts.dev/examples/forgetrail-mcp/TOOL_FACTS.md
 reach:
   filesystem: none
   network: none
@@ -57,7 +57,7 @@ toolset. They do not describe a typical coding host that also grants workspace
 or shell tools. That wider host is a different label. Host model binding is
 `host-provided`. Host telemetry is `undisclosed`, not proven empty. The MCP
 server is labeled separately in ToolFacts
-([`forgetrail-mcp/TOOL_FACTS.md`](../../../tool-facts/examples/forgetrail-mcp/TOOL_FACTS.md)).
+([`forgetrail-mcp/TOOL_FACTS.md`](https://toolfacts.dev/examples/forgetrail-mcp/TOOL_FACTS.md)).
 ForgeTrail `runAudit` returns a packaged audit prompt and does not scan the
 user workspace.*
 

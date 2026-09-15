@@ -15,8 +15,8 @@ tools:
   browses_web: false
   categories: [filesystem, shell, edit]
   toolsets:
-    - ../../tool-facts/examples/filesystem-mcp/TOOL_FACTS.md
-    - ../../tool-facts/examples/shell-mcp/TOOL_FACTS.md
+    - https://toolfacts.dev/examples/filesystem-mcp/TOOL_FACTS.md
+    - https://toolfacts.dev/examples/shell-mcp/TOOL_FACTS.md
 reach:
   filesystem: read-write
   network: none

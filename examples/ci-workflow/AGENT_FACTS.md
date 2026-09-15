@@ -15,7 +15,7 @@ tools:
   browses_web: false
   categories: [github, triage]
   toolsets:
-    - ../../tool-facts/examples/github-mcp/TOOL_FACTS.md
+    - https://toolfacts.dev/examples/github-mcp/TOOL_FACTS.md
 reach:
   filesystem: none
   network: allowlist

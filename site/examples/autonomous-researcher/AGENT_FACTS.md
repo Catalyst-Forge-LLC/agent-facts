@@ -15,7 +15,7 @@ tools:
   browses_web: true
   categories: [fetch, summarize, store]
   toolsets:
-    - ../../tool-facts/examples/fetch-mcp/TOOL_FACTS.md
+    - https://toolfacts.dev/examples/fetch-mcp/TOOL_FACTS.md
 reach:
   filesystem: scoped
   network: unrestricted
