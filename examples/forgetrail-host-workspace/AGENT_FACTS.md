@@ -12,7 +12,7 @@ model:
   binding: host-provided
   models: []
 tools:
-  count: 31
+  count: 33
   executes_shell: true
   browses_web: false
   categories: [guidance, templates, audit, filesystem, shell]
@@ -34,7 +34,7 @@ egress:
   telemetry: undisclosed
   data_shared: undisclosed
 generated:
-  date: 2026-09-10
+  date: 2026-09-16
   generator: hand-authored
 credits:
   generated_with: https://agentfacts.dev
@@ -54,7 +54,7 @@ credits:
 *Illustrative second configuration of the same ForgeTrail-attached agent. The
 host also grants workspace read-write and shell. That attached capability is
 why this file exists. It does not mean the narrower ForgeTrail-MCP-only label
-constrains this host. Tool count 31 is illustrative (29 ForgeTrail tools plus
+constrains this host. Tool count 33 is illustrative (31 ForgeTrail tools plus
 host workspace and shell). Host workspace tools are not given their own
 ToolFacts files here. Configured approval for writes and shell is declared
 intent, not proof the host enforces it on every run.*
@@ -70,7 +70,7 @@ intent, not proof the host enforces it on every run.*
 
 | | |
 |---|---|
-| Count | 31 |
+| Count | 33 |
 | Executes shell | true |
 | Browses web | false |
 | Categories | guidance, templates, audit, filesystem, shell |

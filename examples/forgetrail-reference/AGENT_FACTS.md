@@ -12,7 +12,7 @@ model:
   binding: host-provided
   models: []
 tools:
-  count: 29
+  count: 31
   executes_shell: false
   browses_web: false
   categories: [guidance, templates, audit]
@@ -34,7 +34,7 @@ egress:
   telemetry: undisclosed
   data_shared: undisclosed
 generated:
-  date: 2026-09-10
+  date: 2026-09-16
   generator: hand-authored
 credits:
   generated_with: https://agentfacts.dev
@@ -72,7 +72,7 @@ user workspace.*
 
 | | |
 |---|---|
-| Count | 29 |
+| Count | 31 |
 | Executes shell | false |
 | Browses web | false |
 | Categories | guidance, templates, audit |

@@ -27,7 +27,8 @@
 labels the **brain**. **AgentFacts** labels the **hands**: what an agent can do, reach,
 and do without asking. [ToolFacts](https://toolfacts.dev) labels each **instrument**;
 AgentFacts rolls those up at the actor level. [SkillFacts](https://skillfacts.dev) labels
-the **playbook** an agent may be taught to follow.
+the **playbook** an agent may be taught to follow. [FeatureFacts](https://featurefacts.dev)
+labels the **terrain**: what the product can do, and which of those capabilities are still only candidates.
 
 **A label describes a configuration, not a codebase.** The same agent binary with different
 tools or permission defaults is a different agent.

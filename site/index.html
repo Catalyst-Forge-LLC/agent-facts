@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://agentfacts.dev/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:title" content="AgentFacts" />
-  <meta property="og:description" content="A Nutrition Facts label for AI agents. Know what it can reach before you let it run." />
+  <meta property="og:description" content="Label the configuration you actually run. Know what it can reach before you let it run." />
   <meta property="og:url" content="https://agentfacts.dev/" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -391,6 +391,7 @@
     .xfacts-family-footer .xfacts-footer-nav a[data-label="model"] { color: #ab93f5; }
     .xfacts-family-footer .xfacts-footer-nav a[data-label="tool"] { color: #5eead4; }
     .xfacts-family-footer .xfacts-footer-nav a[data-label="skill"] { color: #f9a8d4; }
+    .xfacts-family-footer .xfacts-footer-nav a[data-label="feature"] { color: #c4d06a; }
     .xfacts-family-footer .xfacts-footer-nav a:hover { color: #fff; }
     .xfacts-family-footer .xfacts-footer-credit {
       display: flex;
@@ -429,11 +430,11 @@
     <div class="label-plane" aria-label="Featured Agent Facts label for ForgeTrail MCP-only">
       <div class="label-plane-inner">
         <h2>Agent Facts</h2>
-        <div class="serving">ForgeTrail Reference Agent · version 0.1.0 · as of 2026-09-10</div>
+        <div class="serving">ForgeTrail Reference Agent · version 0.1.0 · as of 2026-09-16</div>
         <div class="label-cols">
           <div class="row thick"><strong>Kind</strong><span>cli-agent</span></div>
           <div class="row thick"><strong>Model binding</strong><span>host-provided</span></div>
-          <div class="row"><strong>Tools</strong><span>29 · ForgeTrail MCP only</span></div>
+          <div class="row"><strong>Tools</strong><span>31 · ForgeTrail MCP only</span></div>
           <div class="row"><strong>Filesystem</strong><span>none</span></div>
           <div class="row"><strong>Network</strong><span>none</span></div>
           <div class="row"><strong>Autonomy</strong><span>reactive</span></div>
@@ -499,7 +500,7 @@ version: "0.1.0"
 model:
   binding: host-provided
 tools:
-  count: 29
+  count: 31
   executes_shell: false
   browses_web: false
   toolsets:
@@ -517,7 +518,7 @@ egress:
   telemetry: undisclosed
   data_shared: undisclosed
 generated:
-  date: 2026-09-10
+  date: 2026-09-16
   generator: hand-authored
 ---</pre>
           <div class="prose">
@@ -535,7 +536,7 @@ generated:
               <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/SPEC.md">SPEC.md</a></li>
               <li><a href="/schema/agent-facts.schema.json">JSON Schema</a></li>
               <li><a href="/examples/index.json">Exemplar catalog (JSON)</a></li>
-              <li><a href="/v#ag1.eNpdUl1r4zAQ_Cthn2W77dvpLQT6FCjc5e0oZiOtbRF9-LTruCHkvx9S05S7N7HMzoxm5wpn0M8KIgYCDa8pj3TI6PzmJw2UKRrabEeKAgosncmnmTJo2KGgv7Bs6gYoOLloQYPxrsE7ngVlYdCARty5gLwzFLkIbWc0EzUv7RMoCMmSB32Fo4vWxRE0TImlmXM6O0v2C8Kgf7_fFEhK5X0Fk5YooF9-KKAPMosQ9zyR96AH9EwKjjmtTNyvdHzMDAqNKTsqfDAuzmI0xZ5QmD0KMSjAxTqB97sYScW2bde2XZk0Axrhjj4wzJ64G0oMUoJrgpm7w9vbvn_d7g6_2mCheM6EZiqeB-eJLywUQENMsQhHkjXl0_fAEouLKC7F-mkFJpOlKA4995n-LC6TvceBi6SYwqWw-3Ij0FXuHjrOJUf0j7V-SPmTlMkPvU9prqHXeG4KAoWUK9tMmR1LacG3N59MNQYalmgdG5-YLNwU0JiJ62GEPAWSwvIPSIFFwZ4nrPb_JzgXvcr81D7Xakwp0IxjkZ9EZtZdt65ra-71q7G3JoUOSsRzYifV-wM9OpmWY4V8dbapnW32-93n2ZqTK3WVvMRSDQta8kK3v9oZFEk">Open ForgeTrail reference label</a></li>
+              <li><a href="/v#ag1.eNpdUstqIzEQ_JXQ5xk72b3pFgI5BQJZ35YwtKWaGWE9ZtU9dkzwvy9SnITdm2iqq0rV9U5HMncdJY4gQ4-5TNgV9uHmBSMKksXN_YSk1JHDESEvKGTogZXDWfSmbVBHB58cGbLB93zFi7KuQobYqj9WUPAWSarQ_cJ2Rv9jc0sdxewQyLzT3ifn00SG5izaLyUfvYP7hAiZ36-XjjTn-n4nm9ekZH7edYQ32FUhg8wIgczIQdDRvuSTQIYT9l8zy4opF4_KR9PqHSdb7SniElgh1BGvziu9XsWgDTurLmK22zob2apsHI5bvHFcAmQ71iy0ptdHu2x3z89Pw-P9w-7XJjqqxgvYztX46APkLIpIhlJOVT1BT7kcvgcOoj6x-pzazzuyBQ5JPQcZCv6svsBdM-FVc8rxXNlDPRSZJndNnpcaJoevtWHM5YNUEMYh5Ly05FtGl44iYi6NbUERL1qr8O0tZNuMkaE1OS82ZIGjS0eYCqRdRxEQoZXlH1BHjpUHmbnZ_5_gWPUa8-3mrvVjzhELT1X-8wKn02ljrx1ssW9sjluqES9ZvDbvX-jJ67zuG-SzuH0rbv_09PBxtv7ga2e1rKn2w5HRsuLyF36YFzc">Open ForgeTrail reference label</a></li>
               <li><a href="/examples/forgetrail-reference/AGENT_FACTS.md">ForgeTrail reference raw Markdown</a></li>
               <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts/blob/main/examples/AGENT_FACTS.template.md">Template</a></li>
               <li><a href="/llms.txt">llms.txt</a></li>
@@ -554,7 +555,7 @@ generated:
             <h3>MCP only</h3>
             <p>
               <a href="/examples/forgetrail-reference/AGENT_FACTS.md">forgetrail-reference</a>
-              · version 0.1.0 · 2026-09-10. Attached capability: 29 ForgeTrail tools.
+              · version 0.1.0 · 2026-09-16. Attached capability: 31 ForgeTrail tools.
               Filesystem none, network none, no shell. Host model is host-provided.
               Host telemetry is undisclosed.
             </p>
@@ -573,8 +574,9 @@ generated:
               writes and shell. That is configured intent, not proven enforcement.
             </p>
             <p>
-              The narrower label does not constrain this host. Tool count 31 is
-              illustrative. Host workspace tools are not given ToolFacts files here.
+              The narrower label does not constrain this host. Tool count 33 is
+              illustrative (31 ForgeTrail tools plus host workspace and shell).
+              Host workspace tools are not given ToolFacts files here.
             </p>
           </article>
         </div>
@@ -610,12 +612,12 @@ generated:
           ForgeTrail is the Catalyst Forge dogfood reference.
         </p>
         <ul class="who">
-          <li><a href="/v#ag1.eNpdUl1r4zAQ_Cthn2W77dvpLQT6FCjc5e0oZiOtbRF9-LTruCHkvx9S05S7N7HMzoxm5wpn0M8KIgYCDa8pj3TI6PzmJw2UKRrabEeKAgosncmnmTJo2KGgv7Bs6gYoOLloQYPxrsE7ngVlYdCARty5gLwzFLkIbWc0EzUv7RMoCMmSB32Fo4vWxRE0TImlmXM6O0v2C8Kgf7_fFEhK5X0Fk5YooF9-KKAPMosQ9zyR96AH9EwKjjmtTNyvdHzMDAqNKTsqfDAuzmI0xZ5QmD0KMSjAxTqB97sYScW2bde2XZk0Axrhjj4wzJ64G0oMUoJrgpm7w9vbvn_d7g6_2mCheM6EZiqeB-eJLywUQENMsQhHkjXl0_fAEouLKC7F-mkFJpOlKA4995n-LC6TvceBi6SYwqWw-3Ij0FXuHjrOJUf0j7V-SPmTlMkPvU9prqHXeG4KAoWUK9tMmR1LacG3N59MNQYalmgdG5-YLNwU0JiJ62GEPAWSwvIPSIFFwZ4nrPb_JzgXvcr81D7Xakwp0IxjkZ9EZtZdt65ra-71q7G3JoUOSsRzYifV-wM9OpmWY4V8dbapnW32-93n2ZqTK3WVvMRSDQta8kK3v9oZFEk">forgetrail-reference</a> · <a href="/examples/forgetrail-reference/AGENT_FACTS.md">raw</a> - <code>cli-agent</code>, reactive, ForgeTrail MCP only</li>
-          <li><a href="/v#ag1.eNpdUktr3DAQ_ivLnFqQ7aS96RYCOQUCbW4lmFlpbIvIkqoZrxPC_vcyyqNpb0aMv_cLnMBeGki4Eli4yXWm-4ohHn7QRJWSo8PVTEkOX5bMcthzfeSCjr6CAU8nirlQBQvXKBifWQ4N4vAlxLixVJRwarePIXmw4GLoUPHAAAvKxmABnV6BgRgcJVYhVwXdQt23_gIMrNlTBPsCx5B8SDNYUDFdqfkUPPn3Ewb76-FsQHLW7xdweUsC9vulAXoitwnxyAvFCFbqRgaONe9MPO50BDthZDLgUGjONZDCwbwFj8mpOqG1RBRiMICbD-phCpH4mYVWNdSgH94EkDSAvh_6ftCXbkInPNATriUSD5MmJRp2t7oy3N_d3Y43V9f3P_vVg_qohG5RH59YrL76bq9BVFMi0UrAQsqJWicsIaGEnFocBlwlT0kCRh4r_d5CJf8WFG6SU16flSNqmWCBt0L1FLjFikUzxvjx4zjlqq4aP3_2zBSnMeZcWkEty7OBldZcG36hyoFFF_VXbcyuSQULW_KBXcxKfDZAcyVuJQpFWkkU5Z8jAx4FR16wGfof4KR8Dfmiv2wzWvJKBWelX0QK22HY9713b8ttdfQurwNo9CVzkKb943oOsmzHdvI-967Nvbu9vX6ts3tss5C6Jd2Rfx3a-Q-mJy-Q">forgetrail-host-workspace</a> · <a href="/examples/forgetrail-host-workspace/AGENT_FACTS.md">raw</a> - same agent, illustrative host workspace and shell</li>
-          <li><a href="/v#ag1.eNp9UstqHDEQ_JWhTw5oZ-1cArot6xgCAR_iWzBDr9QzK6yRJurWPlj230PLTuxDyGkGUdVVXV0XOIC9M5BwJrDw7f5rt80-pKnbTJSku-G6UDkEJt95GrFG4U9gwNOBYl6ogIUtCsYzS_eQy0TdTYixshSUcCDFvoTkwULwtKKTUOKQExhgQakMFtApEgzE4Cix-tgs6Pa0-tzfgoE5e4pgL7ALSa2BBZfTGKZacBfpD4LB_ny-GpCc9f8CLtckYL8YoBO5KsQD7ylGsFIqGdiVfGTi4Ug7sCNGJgMOhaZcAuk0GEMkPrPQrH4b1wD5IPD8pkPSgH2_7vu1vqxGdMJrOuG8ROL1-4jV7Jb10-Pj9-Fhs3360c8ezH-ITe4fHF2xELq9rvjBoNVXvzqWIBpJIjnm8gIWUk7ULsYSEkrIqSVlwBXylCRg5KHQrxoK-bcMsUpOeT6rRtRTg4X3JoABXJaSDxj_EocxF02i6fOHuFS31NcTPxtgiuMQc17aIVvqVwMzzbk0tYUKBxZKTnsQs0Mdol91DhZ0K17QUdejVnTdvZK7lgVcDdBUiFsDhCLNJDoZMOV0nnNVbx4FB95jWxgq40Sd4oJrAw7qoYnd9netglJq0mr41-5cfwNb6x1H">ide-coding-agent</a> · <a href="/examples/ide-coding-agent/AGENT_FACTS.md">raw</a> - <code>ide-extension</code>, supervised writes/shell</li>
-          <li><a href="/v#ag1.eNplkkFrHDEMhf_KoFML3tmkvfkWAjkFAmlKDyEMXs-bXROPPZXk2U1D_nuxs00pvVrWe5_09Eor2UtDyc0gS1dFc8pzLtL9wK67h8CxP4DJ0IgVMS9gsnTt1MUX0e4m8x7dpxBjEWWnYcVnMvQc0kiW3IfcRsBr8CBDok6LkKWFsQYcyVAMHkkawOL8AZsv_QUZmvOISPaVdiGNIe3J0hROGP-UhOwjlTQG8TELRnp6M6Q518Ir-VySkv1qCCf4opBBDoiR7OSiwNCO81EgwxE7ssoFhrxT7DMHNOkJ6g-VuMyz4_DrnT4z6OnsA20f-37b99v6spmcV9ni5OYlQrZNYjP7Zftwd3c73FxdP3zr53dShvOHSjqFCHkRxUyWxOeljZigx8zPZKkkhigHr60wQjQkpyGn_zdgyDNGJA0uysD4WQJjJPtYHc95vFTTWOP8JyMy5JaF8-riR-MwZa7NhgRxGmLOSwuiruvN0Iw5c5NbwBJEkXyN0cdcKmrMvnG2If5SvhnCniEtJ0XEDK0yFBr5FN7ndOoGObjGTwvneVExXVspxu77_a2Yrojbo6v9wUsVXitIc7zoL9sZKZdUgx3P2L8BYSoIkw">autonomous-researcher</a> · <a href="/examples/autonomous-researcher/AGENT_FACTS.md">raw</a> - <code>autonomous-service</code>, self-loop + open web</li>
+          <li><a href="/v#ag1.eNpdUstqIzEQ_JXQ5xk72b3pFgI5BQJZ35YwtKWaGWE9ZtU9dkzwvy9SnITdm2iqq0rV9U5HMncdJY4gQ4-5TNgV9uHmBSMKksXN_YSk1JHDESEvKGTogZXDWfSmbVBHB58cGbLB93zFi7KuQobYqj9WUPAWSarQ_cJ2Rv9jc0sdxewQyLzT3ifn00SG5izaLyUfvYP7hAiZ36-XjjTn-n4nm9ekZH7edYQ32FUhg8wIgczIQdDRvuSTQIYT9l8zy4opF4_KR9PqHSdb7SniElgh1BGvziu9XsWgDTurLmK22zob2apsHI5bvHFcAmQ71iy0ptdHu2x3z89Pw-P9w-7XJjqqxgvYztX46APkLIpIhlJOVT1BT7kcvgcOoj6x-pzazzuyBQ5JPQcZCv6svsBdM-FVc8rxXNlDPRSZJndNnpcaJoevtWHM5YNUEMYh5Ly05FtGl44iYi6NbUERL1qr8O0tZNuMkaE1OS82ZIGjS0eYCqRdRxEQoZXlH1BHjpUHmbnZ_5_gWPUa8-3mrvVjzhELT1X-8wKn02ljrx1ssW9sjluqES9ZvDbvX-jJ67zuG-SzuH0rbv_09PBxtv7ga2e1rKn2w5HRsuLyF36YFzc">forgetrail-reference</a> · <a href="/examples/forgetrail-reference/AGENT_FACTS.md">raw</a> - <code>cli-agent</code>, reactive, ForgeTrail MCP only</li>
+          <li><a href="/v#ag1.eNpdUktr3DAQ_ivLnFKQd5PmplsI5BQItLmVYGalsS1WllTN2E4I-9_LKI-mvRkx_t6vsIK9MpBwJrBwl-tIjxVD3P2ggSolR7ubkZLsLqbMsttyPXFBR9_AgKeVYi5UwcItCsYXll2D2F2EGBeWihLWdnsKyYMFF0OHigcGWFAWBgvo9AoMxOAosQq5Kegm6r7vL8HAnD1FsK9wDMmHNIIFFdOVmtfgyX-cMNhfT2cDkrN-v4LLSxKw19cG6JncIsQ9TxQjWKkLGTjWvDFxv9ER7ICRyYBDoTHXQAoH4xI8JqfqhOYSUYjBAC4-qIchROIXFprVUIN-ehdA0gAmkcL2cNC3AZ3w3tN6oGecSyQ-DBqXaOLd7Mrh8eHhvr-7uX38uZ89qJlK6CY184XK6qvvthpEhSUS7QUspJyoFcMSEkrIqWViwFXylCRg5L7S7yVU8u9p4SI55flFOaI2ChZ4KVTXwC1bLBo0xs8f-yFXtdb4-atxpjj0MefSWmqBng3MNOfa8AtVDiw6q79qY3ZNKlhYkg_sYlbiswEaK3FrUijSTKIo_xwZ8CjY84TN0P8Aq_I15Mv9VdvSlGcqOCr9RzPbtu3d-3xbHXuX5wNo9CVzkKb983oMMi3HdvKx-a5tvru_v32rszu1bUhdko7Jv63t_AcEWDKH">forgetrail-host-workspace</a> · <a href="/examples/forgetrail-host-workspace/AGENT_FACTS.md">raw</a> - same agent, illustrative host workspace and shell</li>
+          <li><a href="/v#ag1.eNqFUsFq3DAQ_RUzpxS066SXgm4haaBQyKG5lWBmpbFXRJZczci7y7L_XkZJmxwKPdmI9-a9efPOsIK9MZBwJrDw7f5rd5d9SFN3O1GS7orrQmUNTL7zNGKNwp_AgKeVYl6ogIU7FIwnlu4hl4m6qxBjZSkoYSXFvoTkwULwtKGjUOKQExhgQakMFtApEgzE4Cix-rhd0O1p83l7DQbm7CmCPcMuJLUGFlxOY5hqwV2kPwgG-_P5YkBy1v8zuFyTgP1igI7kqhAPvKcYwUqpZGBX8oGJhwPtwI4YmQw4FJpyCaTTYAyR-MRCs_ptXAPkg8Dzmw5JA-5FFrZ9r28jOuGtp7WnI85LJO7f52xmt_RPj4_fh4fbu6cf29mD-R-7Cf-DqMsWQrfXZT9YtfrqN4cSRMNJJIdcXsBCyona7VhCQgk5tcwMuEKekgSMPBT6VUMh_5YmVskpzyfViHp0sPDeCTCAy1LyivEvcRhz0UyaPn8ITnVLfT32swGmOA4x56WdtOV_MTDTnEtTW6hwYKHktBExO9Qh-lXnYEG34gUddVvUsvbdK7lrWcDFAE2FuHVBKNJMopMBU06nOVf15lFw4D22haEyTtQpLrg2YFUPTex6e9PKKKUmLYl_bdHlN_o9IzE">ide-coding-agent</a> · <a href="/examples/ide-coding-agent/AGENT_FACTS.md">raw</a> - <code>ide-extension</code>, supervised writes/shell</li>
+          <li><a href="/v#ag1.eNplkkFrHDEMhf_KoFMLzm7S3nwLgZwCgTSlhxAGr_1mx8Rju5Y8u-mS_17sbFNKr5b13ic9nWglfaUomgWk6bpKimlJlYcf2A0PYJhiZxRS5LAipIxCmm6MmPDKMtymssfwyYdQWYoRv-IzKXrx0ZEm8yF3wSirtyBFLEYqk6ZcsHocSFHwFpE7QDZ2xsWXzSUpWpJDIH2inY_Oxz1pmvwR7k-JST9Rjc6zDYnh6PlNkaTUCieyqUYh_VURjrBVwCPPCIH0ZAJD0a6kA4PHA3akpVQoskawT8WjS08QOzfiuiym-F_v9KmAns8-kP5xFsmst9v2NhkrvHFYtziaJQfwtutcLDZvH-_v78bb65vHb5vlHbfA2LnhTj6AX1mwkCa2Kfc5I-SQygtpqrGApXgrveDA4qMRn-L_a1BkCxyieBN4LPhZfYEj_dQcz6G8NtPQMv0nKFJkci5pNeGjcZxSac2KGGEaQ0q5p9F29qZowZJKl8so7FkQbcvShlQbaki2c_Yh_lK-KcK-gHtYgoAF0mTId_LJv89pxIw8m85PuaQlC6uhrxRu-P5wx2qobPYYWr-33ITXBtIdLzdX_Zak1NjSdWfs346CC4g">autonomous-researcher</a> · <a href="/examples/autonomous-researcher/AGENT_FACTS.md">raw</a> - <code>autonomous-service</code>, self-loop + open web</li>
           <li><a href="/v#ag1.eNp1Uk1rGzEQ_SvLnBKQTVN60q2EFkrAMU1DKSUssjRrC2s125nR2sb4vxfJbUgPveqN3se8OcMM9s5AdiOChfsiSiNy91SmiVi7-53TDSkYCDhjogm5jjl16STafSbeYncTUyqi7DTOeAsG9jEHsOBfP4s6LQIWnK8zYCBFj1mq5vPqYfX4fQUGRgqYwJ5hE3OIeQsWhnjE8BcSsD-h5BDFJxIM8HIxoEQVOIOnkhXsBwN4RF8UpZcdpgR2cEnQwIbpICj9ATevb94pbokjNu79ZiHo2O_AgEa_x-qdcSg5LBLRvkxNktH5XZUcYkI5ieIIFjLlGiyjHoj3NWtKdEhRrtsTjdlppNyU3BSXeHTjlHAh110vY55dijXtfvNf8MWAZwyYNbokPeOvEhlD5Xx6Xq8fv37rP66_9A-ffjSrrihlGk_VbaoNgm32_7TgpolpdumVpx-IK9cbjSopmIY-EU2tlba7i4ERR-JGPSFLFMXsa6M-UakxEvmWGCzMmANx5ynPyNJeO1Fi7G7eFNoxbiPlW7gYwC2jtGIVE46oVQliczXEdhTBqetl51p-mJjGScX8K6LssniODSnitthVruilitS5q8H3y7vlu1o7l1yPIoBVLnj5DZETGtY">support-chatbot</a> · <a href="/examples/support-chatbot/AGENT_FACTS.md">raw</a> - <code>chatbot</code>, cloud memory, identified egress</li>
-          <li><a href="/v#ag1.eNo9UsGO0zAQ_ZVoTiC56QLi4ltZsbAC0QNFHFAVOc4kNet4gmecbFT135Hd7t4s-_m9N-_NGWbQ7xQEMyJouH-sDtGZAavfFJ96T0u1GzAIKOhwRk8TxgwzYvzKUj1QHLB647xPLNGIm_EtKHhyoQMNy40DFLAYSQwajM0gUOCdxcBZdDcZe8LN-_oOFIzUoQd9htaFzoUBNLTRhWGzUoobWsILhkH_OV4UCFE-n8FSCgL6owJ8RpsEueETeg-6N55RQRtpYeRmwfb1zhrBgaLDTAeDk1NqQYGUEOB4o0cpz3W9rettvtn0xgpv8dmMk0feXj9uRjttD_v99-Zhd3_4WY8dZIcRjT1lh73zyCsLjqAhUMgxBJQcU07Ge1q842vYLC4YcRSKsplcfdWoLY3Zl43YYRBnPDcR_yUXscvIL4-Hr78-NYf9t88_irpJQoHGNRvwuUPQwGnCODvGDhSYaYo0G_9K0_QUM9USnSDf3MR0Le6ogNH3jSeaSj0lyIuCEUeKRWXCyI4Fg83tMjI7yrV5smWi6579pbbyNHBFwa9wUYBDRC5NCnocUTIbmEBhHSkVH0ZMwydTRoXEeU8zzlnOBHPWLfR39YeyTBJTyA13oCUmvPwHt4wDdQ">ci-workflow</a> · <a href="/examples/ci-workflow/AGENT_FACTS.md">raw</a> - <code>workflow</code>, GitHub allowlist</li>
+          <li><a href="/v#ag1.eNo9UsGO0zAQ_ZVoTiC57QLi4ltZsbAC0QNFHFAVOc4kMet4gmecbFT135Hd7t4s-_m9N-_NGWbQ7xQEMyJouH-sjtGZHqvfFJ86T0u17zEIKGhxRk8TxgwzYvzKUj1Q7LF647xPLNGIm_EtKHhyoQUNy40DFLAYSQwajM0gUOCdxcBZdD8ZO-Dm_fYOFIzUogd9hsaF1oUeNDTRhX6zUoobWsILhkH_OV0UCFE-n8FSCgL6owJ8RpsEueYBvQfdGc-ooIm0MHK9YPN6Z41gT9FhpoPeyZAaUCAlBDjd6FHK8yAysd7t8l1nrPC2xXmHz2acPPLu-nsz2ml3PBy-1w_7--PP7dhCthnR2CHb7JxHXllwBA2BQs4ioOSscjze0-IdXxNnccGIo1DkzeS2V42tpTGbsxFbDOKM5zriv-Qithn55fH49den-nj49vlHUTdJKNC4ZgM-FwkaOE0YZ8fYggIzTZFm419p6o5iplqiE-Sbm5iu7Z0UMPqu9kRT6aikeVEw4kixqEwY2bFgsLliRmZHuTtPtkx0Xba_1FSeeq4o-BUuCrCPyKVOQY8jSmYDEyisI6Xiw4ipeTBlVEiclzXjnOVMMGfdQn-3_VA2SmIKueYWtMSEl__qUAZq">ci-workflow</a> · <a href="/examples/ci-workflow/AGENT_FACTS.md">raw</a> - <code>workflow</code>, GitHub allowlist</li>
         </ul>
       </div>
     </section>
@@ -640,9 +642,10 @@ pnpm validate ../examples/*/AGENT_FACTS.md</pre>
               Validation is structural checking, not proof of compliance in every run.
             </p>
             <p>
-              ForgeTrail's reference config is the dogfood exemplar. Derived tool-surface
-              drift lives on the <a href="https://xfacts.dev/v/">xFacts Panel</a>, not a
-              public directory of other people's agents.
+              ForgeTrail's reference config is the dogfood exemplar. The hub
+              <a href="https://xfacts.dev/#panel">Panel</a> is a derived snapshot of a
+              tool surface, not a live drift monitor, and this site is not a public
+              directory of other people's agents.
             </p>
             <ul class="links">
               <li><a href="https://github.com/Catalyst-Forge-LLC/agent-facts">github.com/Catalyst-Forge-LLC/agent-facts</a></li>
@@ -667,7 +670,7 @@ pnpm validate ../examples/*/AGENT_FACTS.md</pre>
             <a href="https://agentfacts.org">agentfacts.org</a>.
           </p>
           <p>
-            Part of the <a href="https://xfacts.dev">xFacts</a> suite &mdash; body, brain, toolbelt, hands, and playbook,
+            Part of the <a href="https://xfacts.dev">xFacts</a> suite &mdash; body, brain, toolbelt, hands, playbook, and terrain,
             all labeled. Spec &amp; schema are <strong>CC0</strong> (public domain). Tooling is
             <strong>MIT</strong>. Adopt freely; a link back is appreciated but not required.
           </p>
@@ -685,6 +688,7 @@ pnpm validate ../examples/*/AGENT_FACTS.md</pre>
         <li><a data-label="tool" href="https://toolfacts.dev">ToolFacts</a></li>
         <li><span class="current" data-label="agent">AgentFacts</span></li>
         <li><a data-label="skill" href="https://skillfacts.dev">SkillFacts</a></li>
+        <li><a data-label="feature" href="https://featurefacts.dev">FeatureFacts</a></li>
       </ul>
       <div class="xfacts-footer-credit">
         <div>© 2026 AgentFacts</div>
