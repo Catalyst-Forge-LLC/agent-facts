@@ -53,9 +53,9 @@ is a new `MODEL_FACTS.md`.
   humans. Tooling never verifies body-vs-frontmatter.
 - **The Golden Rule:** objective facts only. "This agent is very careful" belongs in a
   README. "Requires human approval before filesystem writes" belongs here.
-- **`undisclosed` over omission** for facts a developer knowingly withholds. It has
-  more teeth here than anywhere else in the family: an agent that won't say what it
-  can reach is a louder red flag than a model that won't state its token count.
+- **`undisclosed` over omission** for facts that are not disclosed. It matters more
+  here than anywhere else in the family: an undisclosed reach value blocks an approval
+  decision that an undisclosed token count does not. Absence is not intent.
 - **Closed enums for judgment fields** so files are comparable across agents.
 - **Licensing:** spec & schema CC0, tooling MIT.
 - **Design:** the AppFacts design system with a distinct accent. ModelFacts uses
@@ -127,8 +127,9 @@ URLs, and an app that ships an agent can carry `APP_FACTS.md`, `MODEL_FACTS.md`,
 
 ## Generator strategy: deterministic first, LLM second
 
-The ModelFacts lesson, doubled: hard facts never come from prose. AgentFacts has an
-advantage no sibling has — **agents are introspectable**:
+The ModelFacts lesson, doubled: the generator takes hard facts from structured
+sources, not from prose. AgentFacts has an advantage no sibling has. **Agents are
+introspectable**:
 
 1. **MCP handshake** (the killer source): connect to an MCP server, call
    `tools/list`, and the tool count, names, and schemas are deterministic ground

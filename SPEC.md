@@ -147,8 +147,8 @@ Telemetry, logging, what leaves the machine.
 
 - **Objective facts only** (the Golden Rule). Marketing language and vibes belong in the
   README, not here.
-- **`undisclosed` over omission** for facts the developer knowingly withholds -
-  especially reach, egress, and credentials.
+- **`undisclosed` over omission** for facts that are not disclosed, especially reach,
+  egress, and credentials. `undisclosed` records absence, not intent.
 - Label **shipped defaults**. Note in prose if hosts can widen permissions; a wider
   host config is a different `AGENT_FACTS.md`.
 - One `AGENT_FACTS.md` per *configuration*. Changing tools, permission defaults, or
