@@ -114,3 +114,5 @@ Session plan: [`specs/REVIEW-AND-PLAN.md`](./specs/REVIEW-AND-PLAN.md).
 <p align="center">
   <em>"Know what it can reach before you let it run."</em>
 </p>
+
+[See the rest of the Catalyst Forge shelf.](https://catalystforge.com/tools/)
