@@ -19,7 +19,7 @@ tools:
   toolsets:
     - https://toolfacts.dev/examples/forgetrail-mcp/TOOL_FACTS.md
 reach:
-  filesystem: none
+  filesystem: scoped
   network: none
   destinations: []
   credentials_required: []
@@ -34,7 +34,7 @@ egress:
   telemetry: undisclosed
   data_shared: undisclosed
 generated:
-  date: 2026-09-16
+  date: 2026-09-24
   generator: hand-authored
 credits:
   generated_with: https://agentfacts.dev
@@ -52,7 +52,9 @@ credits:
 | **Version** | 0.1.0 |
 
 *This file labels one configuration: a CLI host with only the ForgeTrail MCP
-server attached. Filesystem `none` and network `none` describe that attached
+server attached. Filesystem is a scoped read through the attached
+tracking-validation tool (`validateTracking`). See the linked ToolFacts
+record for the input and scope. Network `none` describes that attached
 toolset. Prefer the slug path
 [`forgetrail-reference/AGENT_FACTS.md`](./forgetrail-reference/AGENT_FACTS.md).
 ForgeTrail `runAudit` returns a packaged audit prompt and does not scan the
@@ -79,7 +81,7 @@ user workspace.*
 
 | | |
 |---|---|
-| Filesystem | none |
+| Filesystem | scoped |
 | Network | none |
 | Destinations | (none) |
 | Credentials required | (none) |

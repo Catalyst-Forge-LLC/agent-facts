@@ -430,20 +430,21 @@
     <div class="label-plane" aria-label="Featured Agent Facts label for ForgeTrail MCP-only">
       <div class="label-plane-inner">
         <h2>Agent Facts</h2>
-        <div class="serving">ForgeTrail Reference Agent · version 0.1.0 · as of 2026-09-16</div>
+        <div class="serving">ForgeTrail Reference Agent · version 0.1.0 · as of 2026-09-24</div>
         <div class="label-cols">
           <div class="row thick"><strong>Kind</strong><span>cli-agent</span></div>
           <div class="row thick"><strong>Model binding</strong><span>host-provided</span></div>
           <div class="row"><strong>Tools</strong><span>31 · ForgeTrail MCP only</span></div>
-          <div class="row"><strong>Filesystem</strong><span>none</span></div>
+          <div class="row"><strong>Filesystem</strong><span>scoped</span></div>
           <div class="row"><strong>Network</strong><span>none</span></div>
           <div class="row"><strong>Autonomy</strong><span>reactive</span></div>
           <div class="row thick"><strong>Self-looping</strong><span>false</span></div>
           <div class="row thick"><strong>Telemetry</strong><span>undisclosed</span></div>
           <div class="deps">
             <b>Actor boundary</b>
-            These none values describe the attached ForgeTrail tools, not a host that also
-            grants workspace or shell. Host model and host telemetry stay host-provided or
+            Filesystem is a scoped read through the ForgeTrail tracking-validation tool.
+            Network none describes the attached toolset, not a host that also grants
+            workspace or shell. Host model and host telemetry stay host-provided or
             undisclosed. <a href="/examples/forgetrail-reference/AGENT_FACTS.md">raw YAML</a>
           </div>
         </div>
@@ -506,7 +507,7 @@ tools:
   toolsets:
     - https://toolfacts.dev/examples/forgetrail-mcp/TOOL_FACTS.md
 reach:
-  filesystem: none
+  filesystem: scoped
   network: none
 autonomy:
   level: reactive
@@ -555,8 +556,8 @@ generated:
             <h3>MCP only</h3>
             <p>
               <a href="/examples/forgetrail-reference/AGENT_FACTS.md">forgetrail-reference</a>
-              · version 0.1.0 · 2026-09-16. Attached capability: 31 ForgeTrail tools.
-              Filesystem none, network none, no shell. Host model is host-provided.
+              · version 0.1.0 · 2026-09-24. Attached capability: 31 ForgeTrail tools.
+              Filesystem is a scoped read through the tracking-validation tool. Network none, no shell. Host model is host-provided.
               Host telemetry is undisclosed.
             </p>
             <p>

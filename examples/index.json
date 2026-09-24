@@ -10,12 +10,12 @@
       "name": "ForgeTrail Reference Agent",
       "kind": "cli-agent",
       "autonomy": "reactive",
-      "filesystem": "none",
+      "filesystem": "scoped",
       "network": "none",
       "self_looping": false,
       "path": "forgetrail-reference/AGENT_FACTS.md",
       "dogfood": true,
-      "viewer": "/v#ag1.eNpdUstqIzEQ_JXQ5xk72b3pFgI5BQJZ35YwtKWaGWE9ZtU9dkzwvy9SnITdm2iqq0rV9U5HMncdJY4gQ4-5TNgV9uHmBSMKksXN_YSk1JHDESEvKGTogZXDWfSmbVBHB58cGbLB93zFi7KuQobYqj9WUPAWSarQ_cJ2Rv9jc0sdxewQyLzT3ifn00SG5izaLyUfvYP7hAiZ36-XjjTn-n4nm9ekZH7edYQ32FUhg8wIgczIQdDRvuSTQIYT9l8zy4opF4_KR9PqHSdb7SniElgh1BGvziu9XsWgDTurLmK22zob2apsHI5bvHFcAmQ71iy0ptdHu2x3z89Pw-P9w-7XJjqqxgvYztX46APkLIpIhlJOVT1BT7kcvgcOoj6x-pzazzuyBQ5JPQcZCv6svsBdM-FVc8rxXNlDPRSZJndNnpcaJoevtWHM5YNUEMYh5Ly05FtGl44iYi6NbUERL1qr8O0tZNuMkaE1OS82ZIGjS0eYCqRdRxEQoZXlH1BHjpUHmbnZ_5_gWPUa8-3mrvVjzhELT1X-8wKn02ljrx1ssW9sjluqES9ZvDbvX-jJ67zuG-SzuH0rbv_09PBxtv7ga2e1rKn2w5HRsuLyF36YFzc"
+      "viewer": "/v#ag1.eNpdkkFrGzEQhf-KmfOunbQ33Ywhp0Cg9a2EZSzN7opIGlUza8cY__cixXZpb0I8vXn65l3gCOa5g4SRwMALl4n2BX1Y_aCRCiVLq-1ESaEDR0cKnKmAgR0qhrPoqr2ADj58cmDABt_jTS-KuggYQKv-WEXBW0pSB20z2pn6b-sn6CCyowDmAgefnE8TGJhZtM-Fj96Ru0sEzK_3awfKXM8XsLwkBfP9uQP6JLsoySAzhQBmxCDUwaHwSUiGEx0edxaVJi6eqh9Mi3eYbI2nFHNAJYEOcHFe4f02jLRpZ9UsZrOpdyNalbWj44Y-MeZAshkrC630-mjzZv_29jq8bHf7n-vooAYvhHauwUcfSM6iFMGAWM7tk4n0xOUDDCRO1IiL-oTqObW_d2ALOUrqMchQ6PfiC7kbFVyUE8dz9Q91VWDawBt7zBUnhsezYeTyZSoUxiEw58a-Ubp2EClyaW6ZinjRWoa_2QLbFgwMLMl5sYGFHFw7oKmQtP0oBYqk1eUfUQcOFQeZscX_3-BY5zXnp_Vza8jMkTJOdfx9B6fTaW1vLWzg15bjBirkzOK1ZX-oJ6_zcmiSe3X7Vt3-9XX3tbj-w9fWallSbYgDo2Wh6x_U_xgF"
     },
     {
       "slug": "forgetrail-host-workspace",
