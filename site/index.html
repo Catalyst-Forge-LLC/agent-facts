@@ -456,10 +456,10 @@
     <section id="why">
       <div class="wrap prose">
         <h2 class="section-title">Why it exists</h2>
-        <p class="section-lead">Nobody turning an agent loose worries about parameter counts.</p>
+        <p class="section-lead">Before running an agent, check what its configuration permits.</p>
         <p>
-          They worry: can it read my filesystem, can it run shell commands, where does my data go,
-          what does it do without a human in the loop, and what does it phone home?
+          The same agent with different tools or permissions needs a different label.
+          Record filesystem and network reach, shell and browser use, autonomy, and egress.
           <a href="https://appfacts.dev">AppFacts</a> labels the <strong>body</strong>.
           <a href="https://modelfacts.dev">ModelFacts</a> labels the <strong>brain</strong>.
           AgentFacts labels the <strong>hands</strong>.
@@ -627,14 +627,16 @@ generated:
       <div class="wrap">
         <h2 class="section-title">Validate one</h2>
         <p class="section-lead">
-          Hand-author from the template. Label the shipped defaults, then point
-          <code>tools.toolsets</code> at the ToolFacts file. The validator is the CI gate.
+          Copy the template, describe one configuration, cite its toolsets, then validate.
+          The current generator is not implemented.
         </p>
         <div class="split">
-          <pre># validate any AGENT_FACTS.md (CI-friendly exit codes)
-cd agent-facts/validator &amp;&amp; pnpm install
+          <pre>git clone https://github.com/Catalyst-Forge-LLC/agent-facts
+cd agent-facts
+# copy examples/AGENT_FACTS.template.md and edit one configuration
+cd validator &amp;&amp; pnpm install
 pnpm validate ../examples/forgetrail-reference/AGENT_FACTS.md
-pnpm validate ../examples/*/AGENT_FACTS.md</pre>
+pnpm validate path/to/AGENT_FACTS.md</pre>
           <div class="prose">
             <p>
               Output is checked against

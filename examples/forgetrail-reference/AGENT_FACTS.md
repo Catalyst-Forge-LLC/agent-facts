@@ -7,7 +7,7 @@ status: active
 license: Apache-2.0
 version: "0.1.0"
 homepage: https://www.catalystforge.com/
-repository: https://github.com/Catalyst-Forge-LLC/forge-kit
+repository: https://github.com/Catalyst-Forge-LLC/forgetrail
 model:
   binding: host-provided
   models: []

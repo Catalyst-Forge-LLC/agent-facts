@@ -4,7 +4,7 @@ One configuration per `kind` in the v0.1 enum.
 
 | Slug | Kind | Autonomy | FS | Network |
 |---|---|---|---|---|
-| [forgetrail-reference](./forgetrail-reference/AGENT_FACTS.md) | cli-agent | reactive | none | none |
+| [forgetrail-reference](./forgetrail-reference/AGENT_FACTS.md) | cli-agent | reactive | scoped | none |
 | [forgetrail-host-workspace](./forgetrail-host-workspace/AGENT_FACTS.md) | cli-agent (illustrative wider host) | supervised | read-write | none |
 | [ide-coding-agent](./ide-coding-agent/AGENT_FACTS.md) | ide-extension | supervised | read-write | none |
 | [autonomous-researcher](./autonomous-researcher/AGENT_FACTS.md) | autonomous-service | autonomous | scoped | unrestricted |

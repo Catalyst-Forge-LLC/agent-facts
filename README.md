@@ -47,7 +47,7 @@ One configuration per `kind`:
 
 | Slug | Kind | Autonomy | FS | Network |
 |---|---|---|---|---|
-| [forgetrail-reference](./examples/forgetrail-reference/AGENT_FACTS.md) | cli-agent | reactive | none | none |
+| [forgetrail-reference](./examples/forgetrail-reference/AGENT_FACTS.md) | cli-agent | reactive | scoped | none |
 | [forgetrail-host-workspace](./examples/forgetrail-host-workspace/AGENT_FACTS.md) | cli-agent (illustrative wider host) | supervised | read-write | none |
 | [ide-coding-agent](./examples/ide-coding-agent/AGENT_FACTS.md) | ide-extension | supervised | read-write | none |
 | [autonomous-researcher](./examples/autonomous-researcher/AGENT_FACTS.md) | autonomous-service | autonomous | scoped | unrestricted |
@@ -68,19 +68,23 @@ Catalog: [`examples/index.json`](./examples/index.json). Template:
 | `memory` | What persists, and where? |
 | `egress` | Telemetry and what leaves the machine. |
 
-## Validating a file
+## Authoring a label
+
+Copy the template, describe one specific configuration, cite its attached toolsets and permission settings, then validate the file. The current generator is not implemented.
 
 ```bash
+git clone https://github.com/Catalyst-Forge-LLC/agent-facts
+cd agent-facts
+# copy examples/AGENT_FACTS.template.md and edit one configuration
 cd validator
 pnpm install
 pnpm validate ../examples/forgetrail-reference/AGENT_FACTS.md
-pnpm validate ../examples/*/AGENT_FACTS.md
+pnpm validate path/to/AGENT_FACTS.md
 ```
 
 ## Generating a label
 
-Generator stubbed. Planned after ToolFacts MCP introspection core. See
-[`generator/README.md`](./generator/README.md).
+The generator is a stub, not a command you can run. It is planned after the ToolFacts introspection core. See [`generator/README.md`](./generator/README.md).
 
 ## Roadmap
 
