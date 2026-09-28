@@ -5,14 +5,14 @@ developer: Catalyst Forge (illustrative)
 kind: cli-agent
 status: active
 license: Apache-2.0
-version: "0.1.0"
+version: "0.1.1"
 homepage: https://www.catalystforge.com/
 repository: https://github.com/Catalyst-Forge-LLC/forgetrail
 model:
   binding: host-provided
   models: []
 tools:
-  count: 33
+  count: 34
   executes_shell: true
   browses_web: false
   categories: [guidance, templates, audit, filesystem, shell]
@@ -34,7 +34,7 @@ egress:
   telemetry: undisclosed
   data_shared: undisclosed
 generated:
-  date: 2026-09-16
+  date: 2026-09-28
   generator: hand-authored
 credits:
   generated_with: https://agentfacts.dev
@@ -49,12 +49,12 @@ credits:
 | **Kind** | cli-agent |
 | **Status** | active |
 | **License** | Apache-2.0 |
-| **Version** | 0.1.0 |
+| **Version** | 0.1.1 |
 
 *Illustrative second configuration of the same ForgeTrail-attached agent. The
 host also grants workspace read-write and shell. That attached capability is
 why this file exists. It does not mean the narrower ForgeTrail-MCP-only label
-constrains this host. Tool count 33 is illustrative (31 ForgeTrail tools plus
+constrains this host. Tool count 34 is illustrative (32 ForgeTrail tools plus
 host workspace and shell). Host workspace tools are not given their own
 ToolFacts files here. Configured approval for writes and shell is declared
 intent, not proof the host enforces it on every run.*
@@ -70,7 +70,7 @@ intent, not proof the host enforces it on every run.*
 
 | | |
 |---|---|
-| Count | 33 |
+| Count | 34 |
 | Executes shell | true |
 | Browses web | false |
 | Categories | guidance, templates, audit, filesystem, shell |

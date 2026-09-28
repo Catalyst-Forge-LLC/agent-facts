@@ -5,14 +5,14 @@ developer: Catalyst Forge
 kind: cli-agent
 status: active
 license: Apache-2.0
-version: "0.1.0"
+version: "0.1.1"
 homepage: https://www.catalystforge.com/
 repository: https://github.com/Catalyst-Forge-LLC/forgetrail
 model:
   binding: host-provided
   models: []
 tools:
-  count: 31
+  count: 32
   executes_shell: false
   browses_web: false
   categories: [guidance, templates, audit]
@@ -34,7 +34,7 @@ egress:
   telemetry: undisclosed
   data_shared: undisclosed
 generated:
-  date: 2026-09-24
+  date: 2026-09-28
   generator: hand-authored
 credits:
   generated_with: https://agentfacts.dev
@@ -49,11 +49,11 @@ credits:
 | **Kind** | cli-agent |
 | **Status** | active |
 | **License** | Apache-2.0 |
-| **Version** | 0.1.0 |
+| **Version** | 0.1.1 |
 
 *This file labels one configuration: a CLI host with only the ForgeTrail MCP
 server attached. Filesystem is a scoped read through the attached
-tracking-validation tool (`validateTracking`). See the linked ToolFacts
+tool that classifies a legacy tracking file (`validateTracking`). See the linked ToolFacts
 record for the input and scope. Network `none` describes that attached
 toolset. These values do not describe a typical coding host that also grants
 workspace or shell tools. That wider host is a different label. Host model binding is
@@ -74,7 +74,7 @@ user workspace.*
 
 | | |
 |---|---|
-| Count | 31 |
+| Count | 32 |
 | Executes shell | false |
 | Browses web | false |
 | Categories | guidance, templates, audit |
