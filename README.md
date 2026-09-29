@@ -72,14 +72,10 @@ Catalog: [`examples/index.json`](./examples/index.json). Template:
 
 Copy the template, describe one specific configuration, cite its attached toolsets and permission settings, then validate the file. The current generator is not implemented.
 
+Install `@xfacts/agentfacts`. The unscoped `agentfacts` package on npm is a separate project.
+
 ```bash
-git clone https://github.com/Catalyst-Forge-LLC/agent-facts
-cd agent-facts
-# copy examples/AGENT_FACTS.template.md and edit one configuration
-cd validator
-pnpm install
-pnpm validate ../examples/forgetrail-reference/AGENT_FACTS.md
-pnpm validate path/to/AGENT_FACTS.md
+npx @xfacts/agentfacts validate path/to/AGENT_FACTS.md
 ```
 
 ## Generating a label

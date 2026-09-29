@@ -631,13 +631,11 @@ generated:
           The current generator is not implemented.
         </p>
         <div class="split">
-          <pre>git clone https://github.com/Catalyst-Forge-LLC/agent-facts
-cd agent-facts
-# copy examples/AGENT_FACTS.template.md and edit one configuration
-cd validator &amp;&amp; pnpm install
-pnpm validate ../examples/forgetrail-reference/AGENT_FACTS.md
-pnpm validate path/to/AGENT_FACTS.md</pre>
+          <pre>npx @xfacts/agentfacts validate path/to/AGENT_FACTS.md</pre>
           <div class="prose">
+            <p>
+              Install <code>@xfacts/agentfacts</code>. The unscoped <code>agentfacts</code> package on npm is a separate project.
+            </p>
             <p>
               Output is checked against
               <a href="/schema/agent-facts.schema.json">agent-facts.schema.json</a> (draft-07).
