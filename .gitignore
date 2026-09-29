@@ -6,3 +6,7 @@ dist/
 __pycache__/
 *.tsbuildinfo
 .wrangler/
+
+# Schema copied by prepack for the published package.
+validator/schema/
+validator/LICENSE

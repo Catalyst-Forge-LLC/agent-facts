@@ -4,6 +4,8 @@ A tiny CLI that checks the YAML frontmatter of an `AGENT_FACTS.md` file against 
 canonical JSON Schema ([`site/schema/agent-facts.schema.json`](../site/schema/agent-facts.schema.json),
 served at [agentfacts.dev/schema/agent-facts.schema.json](https://agentfacts.dev/schema/agent-facts.schema.json)).
 
+The command is `agentfacts validate <file>` from `@xfacts/agentfacts` (Node 22.18 or newer). In this repository, `pnpm validate` runs the same program.
+
 ## Usage
 
 ```bash
@@ -16,5 +18,5 @@ pnpm validate ../examples/AGENT_FACTS.template.md
 pnpm validate path/to/your/AGENT_FACTS.md
 ```
 
-TypeScript, ESM, run via `tsx`. Uses [ajv](https://ajv.js.org/) (draft-07) with
+TypeScript, ESM. Node runs the source directly. Uses [ajv](https://ajv.js.org/) (draft-07) with
 `ajv-formats` and [yaml](https://eemeli.org/yaml/).
