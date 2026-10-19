@@ -23,6 +23,8 @@
 
 ## What is this?
 
+Before enabling an agent, compare its declared tools, filesystem access, network reach, and autonomy with the job you intend to give it. The [ForgeTrail reference configuration](examples/forgetrail-reference/AGENT_FACTS.md) declares scoped filesystem access and reactive behavior. The [illustrative wider host configuration](examples/forgetrail-host-workspace/AGENT_FACTS.md) declares read-write access and supervised behavior for the same agent. The labels make that difference inspectable; you still check the host's actual permissions.
+
 [AppFacts](https://appfacts.dev) labels the **body**. [ModelFacts](https://modelfacts.dev)
 labels the **brain**. **AgentFacts** labels the **hands**: what an agent can do, reach,
 and do without asking. [ToolFacts](https://toolfacts.dev) labels each **instrument**;
